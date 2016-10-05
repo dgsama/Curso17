@@ -1,0 +1,40 @@
+HTTP/1.1 200 OK
+Date: Wed, 14 Sep 2016 10:28:41 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.23
+Set-Cookie: dinamicPage=e9od5hj7fkhutlsa33v4revaa2; path=/sew/practicas/practica-01; domain=www-sew.dyndns.org; HttpOnly
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Set-Cookie: dinamicPage=frvu4croeledqc5me7990vaiv6; path=/sew/practicas/practica-01; domain=www-sew.dyndns.org; HttpOnly
+Vary: Accept-Encoding
+Content-Length: 767
+Content-Type: text/html
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Documentos de ejemplo</title>
+</head>
+<body>
+
+    <header>
+        <h1>Página dinámica</h1>
+        <p>Ejemplo de documento HTML5</p>
+    </header>
+
+    <form method="POST" action="/sew/practicas/practica-01/ejemplo.php">
+        <fieldset>
+            <legend>Nombre y apellidos</legend>
+            <label>Nombre </label><input type="text"
+             value="" name="nombre"/><br/>
+            <label>Apellidos </label><input type="text"
+             value="" name="apellidos"/><br/>
+            <input type="submit" value=" Enviar "/>
+            <input type="reset" value="Restablecer"/>
+        </fieldset>
+    </form>
+</body>
+</html>
+

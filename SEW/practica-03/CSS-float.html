@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+  <head>
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="WWW, HTML, XHTML, CSS" />
+    <meta name="description" content="Posicionamiento flotante." />
+    <meta name="author" content="Pedro Hernández Araúzo" />
+    <title>Modelo de formato visual</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script type="text/javascript" src="funciones.js" defer="defer">
+    </script>
+  </head>
+  <body>
+    <h1>Propiedad float</h1>
+    <hr />
+<!-- Ejemplo de código -->
+<pre id="doc_html">
+<code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Language" content="es" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html;
+    charset=utf-8" /&gt;
+    &lt;meta name="author" content="Pedro Hernández Araúzo" /&gt;
+    &lt;title&gt;Modelo de formato visual&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+    &lt;!--
+    /*&lt;![CDATA[*/
+      body {
+        font-size: 130%;
+      }
+      
+      img {
+        float: right;
+        margin-left: 1em;
+        border: 1px solid rgb(0,0,0);
+      }
+    /*]]&gt;*/
+    --&gt;
+   &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Propiedad float&lt;/h1&gt;
+    &lt;p&gt;
+      Una caja flotante se convierte en una caja de
+      bloque que se desplaza hacia la izquierda o
+      derecha hasta que su borde &lt;img src="ranita.gif"
+      width="110" height="110" alt="ranita" /&gt; externo
+      toca el borde del bloque de contención o el borde
+      externo de otro flotante.&lt;br /&gt;La parte superior
+      de la caja flotante se alinea con la parte
+      superior de la caja de línea actual (o la parte
+      inferior de la caja de bloque precedente si no
+      existe ninguna caja de línea). Si no hay suficiente
+      espacio horizontal en la línea actual para el
+      flotante, es desplazado hacia abajo, línea por
+      línea, hasta una línea que tenga espacio para él.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+GET /sew/practicas/practica-01/ejemplo.html HTTP/1.1
+Host: www-sew.dyndns.org
+Accept-Encoding: gzip
+
+GET /sew/practicas/practica-01/w3c.png HTTP/1.1
+Host: www-sew.dyndns.org
+

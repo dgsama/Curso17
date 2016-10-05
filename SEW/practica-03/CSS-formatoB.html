@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+  <head>
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="WWW, HTML, XHTML, CSS" />
+    <meta name="description" content="Contexto de formato de bloque." />
+    <meta name="author" content="Pedro Hernández Araúzo" />
+    <title>Contexto de formato de bloque</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script type="text/javascript" src="funciones.js" defer="defer">
+    </script>
+  </head>
+  <body>
+    <h1>Contexto de formato de bloque</h1>
+    <hr />
+<!-- Ejemplo de código -->
+<pre id="doc_html">
+<code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Language" content="es" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html;
+    charset=iso-8859-1" /&gt;
+    &lt;meta name="author" content="Pedro Hernández Araúzo" /&gt;
+    &lt;title&gt;Contexto de formato de bloque&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+    /*&lt;![CDATA[*/
+      p {
+        background-color: rgb(255,255,0);
+        border: 1px solid rgb(0,0,0);
+        margin: 0.25em;
+        font-size: 125%;
+      }
+      
+      div {
+        color: rgb(255,255,255);
+        background-color: rgb(0,0,255);
+        margin-top: 2em;
+        padding: 5px;
+        text-align: justify;
+      }
+      
+      p.rojo {
+        background-color: rgb(255,0,0);
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+        border: 1px solid rgb(0,0,0);
+      }
+
+      p.dos {
+        margin-right: 25%;
+      }
+      
+      p.tres {
+        margin-left: 150px;
+        width: 65%;
+      }
+    /*]]&gt;*/
+   &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Contexto de formato de bloque&lt;/h1&gt;
+    &lt;p&gt;
+      Párrafo 1
+      &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+    &lt;/p&gt;
+    &lt;p class="dos"&gt;
+      Párrafo 2
+      &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+    &lt;/p&gt;
+    &lt;p class="tres"&gt;
+      Párrafo 3
+      &lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+    &lt;/p&gt;
+    &lt;div&gt;
+      La Bolsa de Nueva York no encuentra atajos para abandonar la corriente
+      bajista con la que inaugur&oacute; el mes de junio (CAJA DE BLOQUE AN&Oacute;NIMA)
+      &lt;p class=&quot;rojo&quot;&gt;Entre los m&uacute;ltiples escollos
+      del camino -la presi&oacute;n de Moody's sobre la deuda, los interrogantes que abre
+      el fin del plan de est&iacute;mulo, la crisis griega...-, la principal r&eacute;mora son
+      las referencias macro, que evidencian que la recuperaci&oacute;n econ&oacute;mica ha
+      perdido fuelle. Y de todas ellas, son los datos relacionados con el empleo
+      los que m&aacute;s preocupan.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+  </body>
+</html>

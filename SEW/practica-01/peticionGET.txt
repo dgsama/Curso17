@@ -1,0 +1,3 @@
+GET /sew/practicas/practica-01/ejemplo.php HTTP/1.1
+Host: www-sew.dyndns.org
+

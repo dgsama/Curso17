@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+  <head>
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="WWW, HTML, XHTML, CSS" />
+    <meta name="description" content="Posicionamiento fijo." />
+    <meta name="author" content="Pedro Hernández Araúzo" />
+    <title>Modelo de formato visual</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script type="text/javascript" src="funciones.js" defer="defer">
+    </script>
+  </head>
+  <body>
+    <h1>Posicionamiento fijo</h1>
+    <hr />
+<!-- Ejemplo de código -->
+<pre id="doc_html">
+<code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Language" content="es" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html;
+    charset=utf-8" /&gt;
+    &lt;meta name="author" content="Pedro Hernández Araúzo" /&gt;
+    &lt;title&gt;Posicionamiento fijo&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+    /*&lt;![CDATA[*/
+      p {
+        background-color: rgb(255,255,0);
+        border: 1px solid rgb(0,0,0);
+        width: 70%;
+        height: 600px;
+        margin-left: auto;
+        margin-right: 0;
+      }
+      
+      h1 {
+        position: fixed;
+      }
+      
+      p.primero {
+        width: 25%;
+        height: 100px;
+        position: fixed;
+        margin: 4em 0 0 0;
+      }
+    /*]]&gt;*/
+   &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Posicionamiento fijo&lt;/h1&gt;
+    &lt;p class="primero"&gt;
+      &lt;strong&gt;Fixed&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      Párrafo 2
+    &lt;/p&gt;
+    &lt;p&gt;
+      Párrafo 3
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+  </body>
+</html>

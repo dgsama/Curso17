@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+  <head>
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="WWW, HTML, XHTML, CSS" />
+    <meta name="description" content="Efectos visuales." />
+    <meta name="author" content="Pedro Hernández Araúzo" />
+    <title>Propiedad overflow</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script type="text/javascript" src="funciones.js" defer="defer">
+    </script>
+  </head>
+  <body>
+    <h1>Propiedad overflow</h1>
+    <hr />
+<!-- Ejemplo de código -->
+<pre id="doc_html">
+<code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Language" content="es" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html;
+    charset=utf-8" /&gt;
+    &lt;meta name="author" content="Pedro Hernández Araúzo" /&gt;
+    &lt;title&gt;Propiedad overflow&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+    /*&lt;![CDATA[*/
+      body {
+        font-size: 130%;
+      }
+      
+      div {
+        overflow: auto;
+        width: 160px;
+        height: 100px;
+        padding: 0.25em;
+        border: 2px inset rgb(47,79,79);
+      }
+      
+      div p {
+        margin: 0;
+      }
+      
+      body > p {
+        margin-top: 3em;
+      }
+    /*]]&gt;*/
+   &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Propiedad overflow&lt;/h1&gt;
+    &lt;div&gt;
+      &lt;p&gt;
+        La propiedad &lt;strong&gt;overflow&lt;/strong&gt;
+        especifica si el contenido de un elemento a
+        nivel de bloque es recortado cuando desborda
+        la caja del elemento.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;p&gt;
+      Lo valores que puede tomar la propiedad son: &lt;em&gt;auto&lt;/em&gt;,
+      &lt;em&gt;visible&lt;/em&gt;, &lt;em&gt;hidden&lt;/em&gt; y
+      &lt;em&gt;scroll&lt;/em&gt;.
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+  </body>
+</html>
