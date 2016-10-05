@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tipo RacionalNoMod</title>
+<link rel="stylesheet" type="text/css" href="css/estDatos.css" />
+</head>
+<body class="hl">
+    <header>
+        <img src="..\logo.png"> </img>
+        <h1>Tipos De Datos</h1>
+        <h2>Números racionales</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Pagina Inicial</a></li>
+            <li><a href="Racional.html">TAD Racional</a></li>
+            <li><a href="AbstractRacional.html">AbstractRacional</a></li>
+            <li><a href="RacionalNoMod.html">RacionalNoMod</a></li>
+            <li><a href="RacionalMod.html">RacionalMod</a></li>
+            <li><a href="Documentacion.html">Documentacion</a></li>
+            <li><a href="Racionales.zip">Descarga</a></li>
+        </ul>
+    </nav>
+    
+    <section>
+    <h1>Abstract Racional</h1>
+     <iframe src="..\RacionalNoMod.xhtml">
+            </iframe>
+    </section>
+ 
+</body>
+</html>

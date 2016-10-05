@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+#code iframe {
+    width: 100%;
+    height: 650px;
+}
+
+#code header{
+    background-color: #08088A;
+    
+    h1{color : red;background-color: #08088A;}
+    h2{color : green;background-color: #08088A}
+}

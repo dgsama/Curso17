@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"
+    title="Style">
+
+<title>Tipo de Datos</title>
+</head>
+<body>
+    <header>
+        <img src=".\logo.png"> </img>
+        <h1>Tipos De Datos</h1>
+        <h2>Números racionales</h2>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href = "index.html">Pagina Inicial</a></li>
+            <li><a href = "doc/estDatos/Racional.html">TAD Racional</a></li>
+            <li><a href = "doc/estDatos/AbstractRacional.html">AbstractRacional</a></li>
+            <li><a href = "doc/estDatos/RacionalNoMod.html">RacionalNoMod</a></li>
+            <li><a href = "doc/estDatos/RacionalMod.html">RacionalMod</a></li>
+            <li><a href = "Documentacion.html">Documentacion</a></li>
+            <li><a href = "Racionales.zip">Descarga</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>TAD Racional</h1>
+        <p>El tipo abstracto de dato (TAD) Racional se proporciona
+            mediante una interfaz Java, especificando cada una de sus
+            operaciones por medio de Javadoc. La documentación se ha
+            generado para el ámbito package; es decir, desde el punto de
+            vista del desarrollador.</p>
+        <p>Por analogía con los tipos numéricos predefinidos en
+            Java, un tipo de dato para números racionales seguramente
+            debería ser inmutable, en cuyo caso, el TAD Racional no
+            debería incluir operaciones básicas modificadoras. Sin
+            embargo, se ha preferido incluir una operación de este tipo,
+            acumula, para que sea posible implementar tipos con
+            distintas características: inmutables y mutables.</p>
+        <P>Para que la misma interfaz se pueda utilizar para
+            realizar implementaciones de tipos de datos mutables y de
+            tipos de datos inmutables, todas las operaciones
+            modificadoras se implementan, por defecto, como operaciones
+            no soportadas, tay como se indica en el cuadro adjunto.</p>
+
+        <figure>
+            <iframe src=".\noSoportado.html" height="80px" width="350px">
+            </iframe>
+        </figure>
+
+        <p>La interfaz incluye las operaciones siguientes:</p>
+        <figure>
+            <table>
+            </table>
+        </figure>
+
+        <h2>Tipo RacionalNoMod</h2>
+        <p>La primera implementación del TAD Racional es un tipo de
+            dato no modicable (o inmutable) dado por la clase
+            RacionalNoMod.</p>
+        <p>Para almacenar la información de los valores racionales
+            del tipo de dato, se utiliza un campo estático, elarray
+            datos. Los racionales se almacenan en posiciones
+            consecutivas del array, por lo que cada componente de éste
+            es otro array de dos enteros, uno para el numerador y otro
+            para el denominador de un racional. El número de racionales
+            guardados en el array datos se mantiene el campo estático
+            numRacionales.</p>
+        <p>Para representar un racional se utiliza un campo de tipo
+            entero, rep. El valor de este campo es el número de
+            componente del array datos en el que se almacena la
+            información (numerador y denominador) de éste.</p>
+        <p>En la Figura 1 adjunta se muestra gráficamente cómo se
+            almacenan los números racionales del tipo RacionalNoMod y
+            cómo se representan éstos.</p>
+        <figure>
+            <img src=".\areaDatos.png">
+        </figure>
+
+        <h3>Tipo RacionalMod</h3>
+        <p>En este caso se va a realizar una implementación del TAD
+            Racional, como un tipo de dato modificable (o mutable), el
+            tipo de dato RacionalMod. Para simplificar la implementación
+            se extenderá la clase RacionalNoMod.</p>
+    </section>
+
+
+</body>
+
+</html>

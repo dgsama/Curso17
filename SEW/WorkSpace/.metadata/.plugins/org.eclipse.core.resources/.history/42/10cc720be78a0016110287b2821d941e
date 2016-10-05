@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TAD Racional</title>
+<link rel="stylesheet" type="text/css" href="java.css"/>
+</head>
+<body class="hl"><pre class="hl"><a id="linea_1"></a><span class="hl lin">    1 </span><span class="hl kwa">package</span> estDatos<span class="hl opt">;</span>
+<a id="linea_2"></a><span class="hl lin">    2 </span>
+<a id="linea_3"></a><span class="hl lin">    3 </span><span class="hl com">/**</span>
+<a id="linea_4"></a><span class="hl lin">    4 </span><span class="hl com"> * Esta interfaz representa los números racionales. Un</span>
+<a id="linea_5"></a><span class="hl lin">    5 </span><span class="hl com"> * número racional consta de un par de números enteros</span>
+<a id="linea_6"></a><span class="hl lin">    6 </span><span class="hl com"> * denominados numerador y denominador, respectivamente.</span>
+<a id="linea_7"></a><span class="hl lin">    7 </span><span class="hl com"> * </span>
+<a id="linea_8"></a><span class="hl lin">    8 </span><span class="hl com"> * &lt;p&gt;Las operaciones básicas modificadoras de ésta interfaz</span>
+<a id="linea_9"></a><span class="hl lin">    9 </span><span class="hl com"> * están implementadas por defecto como no soportadas&lt;/p&gt;</span>
+<a id="linea_10"></a><span class="hl lin">   10 </span><span class="hl com"> * </span>
+<a id="linea_11"></a><span class="hl lin">   11 </span><span class="hl com"> * &#64;author Pedro Hernández</span>
+<a id="linea_12"></a><span class="hl lin">   12 </span><span class="hl com"> */</span>
+<a id="linea_13"></a><span class="hl lin">   13 </span>
+<a id="linea_14"></a><span class="hl lin">   14 </span><span class="hl kwa">public interface</span> Racional <span class="hl opt">{</span>
+<a id="linea_15"></a><span class="hl lin">   15 </span>
+<a id="linea_16"></a><span class="hl lin">   16 </span>    <span class="hl com">/**</span>
+<a id="linea_17"></a><span class="hl lin">   17 </span><span class="hl com">     * El numerador de este racional</span>
+<a id="linea_18"></a><span class="hl lin">   18 </span><span class="hl com">     * &#64;return el numerador del racional</span>
+<a id="linea_19"></a><span class="hl lin">   19 </span><span class="hl com">     */</span>
+<a id="linea_20"></a><span class="hl lin">   20 </span>    <span class="hl kwb">int</span> <span class="hl kwd">numerador</span><span class="hl opt">();</span>
+<a id="linea_21"></a><span class="hl lin">   21 </span>    
+<a id="linea_22"></a><span class="hl lin">   22 </span>    <span class="hl com">/**</span>
+<a id="linea_23"></a><span class="hl lin">   23 </span><span class="hl com">     * El denominador de este racional</span>
+<a id="linea_24"></a><span class="hl lin">   24 </span><span class="hl com">     * &#64;return el denominador del racional</span>
+<a id="linea_25"></a><span class="hl lin">   25 </span><span class="hl com">     */</span>
+<a id="linea_26"></a><span class="hl lin">   26 </span>    <span class="hl kwb">int</span> <span class="hl kwd">denominador</span><span class="hl opt">();</span>
+<a id="linea_27"></a><span class="hl lin">   27 </span>    
+<a id="linea_28"></a><span class="hl lin">   28 </span>    <span class="hl com">/**</span>
+<a id="linea_29"></a><span class="hl lin">   29 </span><span class="hl com">     * Retorna el racional suma de este racional</span>
+<a id="linea_30"></a><span class="hl lin">   30 </span><span class="hl com">     * y el racional especificado</span>
+<a id="linea_31"></a><span class="hl lin">   31 </span><span class="hl com">     * &#64;param r el racional especificado</span>
+<a id="linea_32"></a><span class="hl lin">   32 </span><span class="hl com">     * &#64;return el racional suma de este y del</span>
+<a id="linea_33"></a><span class="hl lin">   33 </span><span class="hl com">     * racional {&#64;code r}</span>
+<a id="linea_34"></a><span class="hl lin">   34 </span><span class="hl com">     */</span>
+<a id="linea_35"></a><span class="hl lin">   35 </span>    Racional <span class="hl kwd">suma</span><span class="hl opt">(</span>Racional r<span class="hl opt">);</span>
+<a id="linea_36"></a><span class="hl lin">   36 </span>
+<a id="linea_37"></a><span class="hl lin">   37 </span>    <span class="hl com">/**</span>
+<a id="linea_38"></a><span class="hl lin">   38 </span><span class="hl com">     * Un nuevo racional equivalente a éste e irreducible</span>
+<a id="linea_39"></a><span class="hl lin">   39 </span><span class="hl com">     * &#64;return un racional que cumple lo siguiente: si {&#64;code x}</span>
+<a id="linea_40"></a><span class="hl lin">   40 </span><span class="hl com">     * es el numerador de este racional e {&#64;code y} su denominador,</span>
+<a id="linea_41"></a><span class="hl lin">   41 </span><span class="hl com">     * entonces {&#64;code x/mcd(x, y)} y {&#64;code y/mcd(x, y)} son el</span>
+<a id="linea_42"></a><span class="hl lin">   42 </span><span class="hl com">     * numerador y denominador, respectivamente, del nuevo racional,</span>
+<a id="linea_43"></a><span class="hl lin">   43 </span><span class="hl com">     * siendo mcd(x, y) el máximo común divisor de {&#64;code x} e</span>
+<a id="linea_44"></a><span class="hl lin">   44 </span><span class="hl com">     * {&#64;code y}</span>
+<a id="linea_45"></a><span class="hl lin">   45 </span><span class="hl com">     */</span>
+<a id="linea_46"></a><span class="hl lin">   46 </span>    Racional <span class="hl kwd">reduce</span><span class="hl opt">();</span>
+<a id="linea_47"></a><span class="hl lin">   47 </span>    
+<a id="linea_48"></a><span class="hl lin">   48 </span>    <span class="hl com">/**</span>
+<a id="linea_49"></a><span class="hl lin">   49 </span><span class="hl com">     * Modifica este racional sumándole el entero especificado</span>
+<a id="linea_50"></a><span class="hl lin">   50 </span><span class="hl com">     * (opcional)</span>
+<a id="linea_51"></a><span class="hl lin">   51 </span><span class="hl com">     * &#64;param dato el entero especificado</span>
+<a id="linea_52"></a><span class="hl lin">   52 </span><span class="hl com">     * &#64;throws UnsupportedOperationException si la operación</span>
+<a id="linea_53"></a><span class="hl lin">   53 </span><span class="hl com">     * no está soportada</span>
+<a id="linea_54"></a><span class="hl lin">   54 </span><span class="hl com">     */</span>
+<a id="linea_55"></a><span class="hl lin">   55 </span>    <span class="hl kwa">default</span> <span class="hl kwb">void</span> <span class="hl kwd">acumula</span><span class="hl opt">(</span><span class="hl kwb">int</span> dato<span class="hl opt">) {</span>
+<a id="linea_56"></a><span class="hl lin">   56 </span>        <span class="hl kwa">throw new</span> <span class="hl kwd">UnsupportedOperationException</span><span class="hl opt">();</span>
+<a id="linea_57"></a><span class="hl lin">   57 </span>    <span class="hl opt">}</span>
+<a id="linea_58"></a><span class="hl lin">   58 </span>
+<a id="linea_59"></a><span class="hl lin">   59 </span>    <span class="hl com">/**</span>
+<a id="linea_60"></a><span class="hl lin">   60 </span><span class="hl com">     * Modifica este racional sumándole el racional especificado</span>
+<a id="linea_61"></a><span class="hl lin">   61 </span><span class="hl com">     * (opcional)</span>
+<a id="linea_62"></a><span class="hl lin">   62 </span><span class="hl com">     * &#64;param r el racional especificado</span>
+<a id="linea_63"></a><span class="hl lin">   63 </span><span class="hl com">     * &#64;throws UnsupportedOperationException si la operación</span>
+<a id="linea_64"></a><span class="hl lin">   64 </span><span class="hl com">     * no está soportada</span>
+<a id="linea_65"></a><span class="hl lin">   65 </span><span class="hl com">     */</span>
+<a id="linea_66"></a><span class="hl lin">   66 </span>    <span class="hl kwa">default</span> <span class="hl kwb">void</span> <span class="hl kwd">acumula</span><span class="hl opt">(</span>Racional r<span class="hl opt">) {</span>
+<a id="linea_67"></a><span class="hl lin">   67 </span>        <span class="hl kwa">throw new</span> <span class="hl kwd">UnsupportedOperationException</span><span class="hl opt">();</span>
+<a id="linea_68"></a><span class="hl lin">   68 </span>    <span class="hl opt">}</span>
+<a id="linea_69"></a><span class="hl lin">   69 </span>    
+<a id="linea_70"></a><span class="hl lin">   70 </span><span class="hl opt">}</span>
+</pre>
+</body>
+</html>
+<!--HTML generated by highlight 3.9, http://www.andre-simon.de/-->
