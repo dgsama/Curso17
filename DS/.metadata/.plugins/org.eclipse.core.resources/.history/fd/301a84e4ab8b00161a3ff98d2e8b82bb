@@ -1,0 +1,30 @@
+package figuras;
+
+public class Circulo extends Figura {
+
+	private Point centro;
+	private int radio;
+	private int x;
+	private int y;// int x,y; Coordenadas del lugar donde se ha pinchado el
+					// ratón
+
+
+	public double distancia() {
+		double aux = 0;
+
+		aux = Math.sqrt(Math.pow(x - centro.getX(), 2)
+				+ Math.pow(y - centro.getY(), 2));
+
+		return aux;
+	}
+
+	@Override
+	public boolean hePinchado() {
+		if (distancia() < radio) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+}

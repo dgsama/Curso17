@@ -1,4 +1,3 @@
-
 CUADRADO
 // int x,y;	Coordenadas del lugar donde se ha pinchado el ratón
 // Point esquina; int ancho, alto;	Atributos del triángulo

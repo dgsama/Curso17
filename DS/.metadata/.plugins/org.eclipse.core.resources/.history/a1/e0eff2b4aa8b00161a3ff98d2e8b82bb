@@ -1,0 +1,7 @@
+package figuras;
+
+public class Figura {
+
+	int x;
+	int y;
+}

@@ -1,0 +1,24 @@
+package editor;
+
+import java.util.*;
+
+import figuras.Circulo;
+import figuras.Figura;
+import figuras.Triangulo;
+
+public class Dibujo {
+
+	private Figura figura;
+	private Point origen;
+	private Point destino;
+	private ArrayList<Figura> figuras;
+
+	public Dibujo() {
+		figuras = new ArrayList<Figura>();
+	}
+
+	public void dibujar() {
+		System.out.println("Estoy vacio (por ahora)");
+	}
+
+}

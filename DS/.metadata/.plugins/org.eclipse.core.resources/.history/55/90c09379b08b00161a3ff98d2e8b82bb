@@ -1,0 +1,27 @@
+package figuras;
+
+import java.awt.Point;
+
+public class Circulo implements Figura {
+
+	Point centro;
+	int radio;
+	int x;
+	int y;// Coordenadas del lugar donde se ha pinchado el ratón
+
+	public double distancia() {
+		double aux = 0;
+
+		aux = Math.sqrt(Math.pow(x - centro.getX(), 2)
+				+ Math.pow(y - centro.getY(), 2));
+
+		return aux;
+	}
+
+	@Override
+	public boolean hePinchado() {
+		boolean pinchado = distancia() < radio;
+		return pinchado;
+	}
+
+}

@@ -1,0 +1,69 @@
+package editor;
+
+import java.util.*;
+
+import figuras.Circulo;
+import figuras.Figura;
+import figuras.Triangulo;
+
+public class Dibujo {
+	
+	private Figura figura;
+	private Point origen;
+	private Point destino;
+	private ArrayList<Figura> figuras;
+
+	public Dibujo() {
+		figuras = new ArrayList<Figura>();
+	}
+
+	public void dibujar() {
+		System.out.println("Estoy vacio (por ahora)");
+	}
+
+}
+
+
+public Dibujar() {
+	figuras = new ArrayList<Figura>();
+	
+}
+
+
+public void seleccionar(String figura){
+	if (figura.equals("rectangulo")){
+		this.figura = new Rectangulo();
+	}
+	else if (figura.equals("triangulo")){
+		this.figura = new Triangulo();
+	}
+	else if (figura.equals("circulo")){
+		this.figura = new Circulo();
+	}	
+}
+
+public void pulsar(int x , int y){
+	origen = new Punto(x,y);
+	pulsado = true;
+}
+
+public void Mover(int x, int y){
+	if(pulsado == true){
+		
+		destino = new Punto(x,y);
+	}
+	
+}
+
+public void soltar(){
+	figura.setOrigen(origen);
+	figura.setDestino(destino);
+	figuras.add(figura);
+	pulsado = false;
+}
+
+public void dibujar(){
+	for(Figura f : figuras){
+		f.dibujar();
+	}
+}
