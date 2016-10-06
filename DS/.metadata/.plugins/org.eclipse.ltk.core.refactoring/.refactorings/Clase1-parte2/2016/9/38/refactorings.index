@@ -1,0 +1,10 @@
+1474538274690	Extract method 'getPoints'
+1474538326152	Extract method 'getPrice'
+1474538439045	Move method 'getPrice'
+1474538449809	Move method 'getPoints'
+1474538602062	Move method 'getPrice'
+1474538611547	Move method 'getPoints'
+1474539196004	Delete element
+1474539220744	Copy package
+1474539229888	Delete element
+1474539274375	Rename package 'Tipo'

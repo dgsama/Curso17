@@ -1,0 +1,17 @@
+package clase1;
+
+public class Temperatura {
+	private double celsius;
+	
+	public Temperatura(double celsius){
+		this.celsius=celsius;
+	}
+	
+	public double getTempCelsius() {
+		return celsius;
+	}
+
+	public double getTempFahrenheit() {
+		return celsius * 1.8 + 32;
+	}
+}
