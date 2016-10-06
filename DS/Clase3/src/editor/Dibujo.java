@@ -20,33 +20,26 @@ public class Dibujo {
 		figuras = new ArrayList<Figura>();
 	}
 
-	public void elegir() {
-		if (figura.equals("Cuadrado")) {
-			this.figura = new Cuadrado();
-		} else if (figura.equals("Circulo")) {
-			this.figura = new Circulo();
-		} else if (figura.equals("Triangulo")) {
-			this.figura = new Triangulo();
-		}
-	}
-
-	public void pinchar(int x, int y) {
-		origen = new Point(x, y);
-		estaPinchado = true;
-
-	}
-
-	public void mover(int x, int y) {
-		if (estaPinchado) {
-			destino = new Point(x, y);
-		}
-	}
+	/*
+	 * public void elegir() { if (figura.equals("Cuadrado")) { this.figura = new
+	 * Cuadrado(); } else if (figura.equals("Circulo")) { this.figura = new
+	 * Circulo(); } else if (figura.equals("Triangulo")) { this.figura = new
+	 * Triangulo(); } }
+	 * 
+	 * public void pinchar(int x, int y) { origen = new Point(x, y);
+	 * estaPinchado = true;
+	 * 
+	 * }
+	 * 
+	 * public void mover(int x, int y) { if (estaPinchado) { destino = new
+	 * Point(x, y); } }
+	 */
 
 	public void dibujar() {
-		for(Figura f: figuras){
+		for (Figura f : figuras) {
 			f.dibujar();
 		}
-		
+
 	}
 
 }

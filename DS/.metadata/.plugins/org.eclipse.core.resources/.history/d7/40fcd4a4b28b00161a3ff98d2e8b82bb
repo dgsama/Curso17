@@ -18,8 +18,8 @@ public class Circulo implements Figura {
 	public double distancia() {
 		double aux = 0;
 
-		aux = Math.sqrt(Math.pow(xP - centro.getX(), 2)
-				+ Math.pow(yP - centro.getY(), 2));
+		aux = Math.sqrt(Math.pow(x - centro.getX(), 2)
+				+ Math.pow(y - centro.getY(), 2));
 
 		return aux;
 	}

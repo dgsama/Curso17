@@ -10,16 +10,16 @@ public class Circulo implements Figura {
 	int yP;// Coordenadas del lugar donde se ha pinchado el ratón
 	int xS;
 	int yS;
-
-	public Circulo() {
-		centro = new Point(xS - xP, yS - yP);
+	
+	public Circulo(){
+		
 	}
 
 	public double distancia() {
 		double aux = 0;
 
-		aux = Math.sqrt(Math.pow(xP - centro.getX(), 2)
-				+ Math.pow(yP - centro.getY(), 2));
+		aux = Math.sqrt(Math.pow(x - centro.getX(), 2)
+				+ Math.pow(y - centro.getY(), 2));
 
 		return aux;
 	}
@@ -33,7 +33,7 @@ public class Circulo implements Figura {
 	@Override
 	public void dibujar() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 }
