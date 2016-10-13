@@ -1,0 +1,9 @@
+package clase4;
+
+public class CampoSueldo extends Campo{
+
+	public CampoSueldo(String etiqueta) {
+		super(etiqueta);
+	}
+
+}

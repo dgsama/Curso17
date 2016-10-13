@@ -1,0 +1,6 @@
+package clase4;
+
+public abstract class Campo {
+	public void pideDato();
+	public String getString();
+}

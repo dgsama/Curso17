@@ -1,0 +1,23 @@
+package clase4;
+import java.io.*;
+
+public class CampoTexto extends Campo {
+
+
+	public CampoTexto(String etiqueta) {
+		super(etiqueta);
+	}
+
+	@Override
+	public boolean comprobar() {
+		boolean valido = true;
+		
+		for (char ch : getString().toCharArray()) {
+			if (!Character.isLetter(ch)) {
+				valido = false;
+				break;
+			}
+		}
+		return valido;
+	}
+}

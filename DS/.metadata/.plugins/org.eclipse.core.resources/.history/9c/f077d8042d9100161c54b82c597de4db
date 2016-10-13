@@ -1,0 +1,22 @@
+package clase4;
+import java.io.*;
+
+public class CampoNumero extends Campo {
+
+	
+
+	@Override
+	public boolean comprobar() {
+		boolean valido = true;
+		for (char ch : texto.toCharArray()) {
+			if (!Character.isDigit(ch)) {
+				valido = false;
+				break;
+			}
+		}
+		
+		return valido;
+	}
+
+	
+}

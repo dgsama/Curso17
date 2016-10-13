@@ -1,0 +1,28 @@
+package clase4;
+
+import java.io.*;
+
+public class CampoPredefinido extends Campo {
+
+	private String[] valores;
+
+	public CampoPredefinido(String etiqueta, String... valores) {
+		super(etiqueta);
+		this.valores = valores;
+
+	}
+
+	@Override
+	public boolean comprobar() {
+		boolean valido = true;
+		
+		for (String valor : valores) {
+			if (getString().toLowerCase().equals(valor.toLowerCase())) {
+				valido = true;
+				break;
+			}
+		}
+
+		return valido;
+	}
+}

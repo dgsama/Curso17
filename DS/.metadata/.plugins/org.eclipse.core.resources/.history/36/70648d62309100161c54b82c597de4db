@@ -1,0 +1,18 @@
+package campos;
+
+import clase4.Campo;
+
+public class CampoUbicacion extends Campo{
+
+	private String[] valores;
+	
+	public CampoUbicacion(String etiqueta, String... valores) {
+		super(etiqueta);
+		this.valores=valores;
+	}
+	
+	public CampoUbicacion(String etiqueta) {
+		super(etiqueta);
+	}
+
+}
