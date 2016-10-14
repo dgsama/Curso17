@@ -1,0 +1,11 @@
+package comprobaciones;
+
+public class ComprobacionCodigoPostal implements Comprobacion{
+
+	@Override
+	public boolean comprobar(String texto) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,29 +1,13 @@
 package campos;
 
-import clase4.Campo;
+import clase4.CampoAbstracto;
+import comprobaciones.Comprobacion;
 
-public class CampoEdad extends Campo {
+public class CampoEdad extends CampoAbstracto {
 
-	public CampoEdad(String etiqueta) {
-		super(etiqueta);
-	}
-
-	@Override
-	public boolean comprobar() {
-		boolean valido = true;
-		for (char ch : getString().toCharArray()) {
-			if (!Character.isDigit(ch)) {
-				valido = false;
-				break;
-			}
-		}
-		if (valido == true) {
-			if (Integer.parseInt(getString()) < 18) {
-				valido = false;
-			}
-		}
-
-		return valido;
+	public CampoEdad(String etiqueta, Comprobacion... comprobaciones) {
+		super(etiqueta, comprobaciones);
+		// TODO Auto-generated constructor stub
 	}
 
 }

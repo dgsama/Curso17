@@ -1,0 +1,25 @@
+package comprobaciones;
+
+public class ComprobacionPredefinido implements Comprobacion{
+
+	private Strings[] ciudad;
+	
+	public public ComprobacionPredefinido(String...ciudad) {
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public boolean comprobar(String texto) {
+		boolean valido = false;
+
+		for (String valor : valores) {
+			if (getString().toLowerCase().equals(valor.toLowerCase())) {
+				valido = true;
+				break;
+			}
+		}
+
+		return valido;
+	}
+
+}

@@ -1,8 +1,9 @@
 package clase4;
+
 import java.util.*;
 
 public class Formulario {
-	public void addCampo(Campo campo) {
+	public void addCampo(CampoAbstracto campo) {
 		campos.add(campo);
 	}
 

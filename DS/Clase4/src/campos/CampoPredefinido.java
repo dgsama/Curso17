@@ -2,29 +2,13 @@ package campos;
 
 import java.io.*;
 
-import clase4.Campo;
+import clase4.CampoAbstracto;
+import comprobaciones.Comprobacion;
 
-public class CampoPredefinido extends Campo {
+public class CampoPredefinido extends CampoAbstracto {
 
-	private String[] valores;
-
-	public CampoPredefinido(String etiqueta, String... valores) {
-		super(etiqueta);
-		this.valores = valores;
-
+	public CampoPredefinido(String etiqueta, Comprobacion... comprobaciones) {
+		super(etiqueta, comprobaciones);
 	}
 
-	@Override
-	public boolean comprobar() {
-		boolean valido = false;
-
-		for (String valor : valores) {
-			if (getString().toLowerCase().equals(valor.toLowerCase())) {
-				valido = true;
-				break;
-			}
-		}
-
-		return valido;
-	}
 }

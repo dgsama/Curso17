@@ -1,20 +1,13 @@
 package campos;
 
-import clase4.Campo;
+import clase4.CampoAbstracto;
+import comprobaciones.Comprobacion;
 
-public class CampoCodigoProducto extends Campo {
+public class CampoCodigoProducto extends CampoAbstracto {
 
-	public CampoCodigoProducto(String etiqueta) {
-		super(etiqueta);
-	}
-
-	@Override
-	public boolean comprobar() {
-		if (getString().length() != 4) {
-			return false;
-		} else {
-			return true;
-		}
+	public CampoCodigoProducto(String etiqueta, Comprobacion... comprobaciones) {
+		super(etiqueta, comprobaciones);
+		// TODO Auto-generated constructor stub
 	}
 
 }

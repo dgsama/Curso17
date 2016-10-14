@@ -1,0 +1,19 @@
+package comprobaciones;
+
+public class ComprobacionPredefinido implements Comprobacion{
+
+	@Override
+	public boolean comprobar(String texto) {
+		boolean valido = false;
+
+		for (String valor : valores) {
+			if (getString().toLowerCase().equals(valor.toLowerCase())) {
+				valido = true;
+				break;
+			}
+		}
+
+		return valido;
+	}
+
+}

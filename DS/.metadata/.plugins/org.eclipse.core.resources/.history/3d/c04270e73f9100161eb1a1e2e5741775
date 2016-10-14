@@ -1,0 +1,12 @@
+package campos;
+
+import java.io.*;
+
+import clase4.CampoAbstracto;
+
+public class CampoTexto extends CampoAbstracto {
+
+	public CampoTexto(String etiqueta) {
+		super(etiqueta);
+	}
+}

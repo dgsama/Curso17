@@ -1,0 +1,18 @@
+package comprobaciones;
+
+public class ComprobacionTexto implements Comprobacion {
+
+	@Override
+	public boolean comprobar(String texto) {
+		boolean valido = true;
+
+		for (char ch : getString().toCharArray()) {
+			if (!Character.isLetter(ch)) {
+				valido = false;
+				break;
+			}
+		}
+		return valido;
+	}
+
+}

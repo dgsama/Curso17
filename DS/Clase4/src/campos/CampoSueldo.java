@@ -1,30 +1,13 @@
 package campos;
 
-import clase4.Campo;
+import clase4.CampoAbstracto;
+import comprobaciones.Comprobacion;
 
-public class CampoSueldo extends Campo {
+public class CampoSueldo extends CampoAbstracto {
 
-	public CampoSueldo(String etiqueta) {
-		super(etiqueta);
-	}
-
-	@Override
-	public boolean comprobar() {
-		boolean valido = true;
-		for (char ch : getString().toCharArray()) {
-			if (!Character.isDigit(ch)) {
-				valido = false;
-				break;
-			}
-		}
-		if (valido == true) {
-			int sueldo = Integer.parseInt(getString());
-			if (sueldo < 800 || sueldo > 1200) {
-				valido = false;
-			}
-		}
-
-		return valido;
+	public CampoSueldo(String etiqueta, Comprobacion... comprobaciones) {
+		super(etiqueta, comprobaciones);
+		// TODO Auto-generated constructor stub
 	}
 
 }
