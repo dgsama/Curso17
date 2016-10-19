@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Notación asintótica</title>
+<link rel="stylesheet" type="text/css"
+href="estilo.css" media="screen"/>
+<style type="text/css">
+/*<![CDATA[
+section {
+    counter-reset: c2 2;
+}
+]]>*/
+</style>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="#" title="Página inicial del blog" tabindex="1"><img
+      src="algoritmia.jpg" alt="logo"/>Algoritmia y otras lides</a>
+    </h1>
+    <h2>Análisis de algoritmos</h2>
+    <ul id="ayuda">
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Navegación</a></li>
+      <li><a href="#">RSS</a></li>
+      <li>
+        <form method="post" action="#">
+		  <fieldset>
+			<input type="search" size="20" placeholder="Búsqueda"/>
+			<input type="submit" value="Buscar"/>
+		  </fieldset>
+        </form>
+      </li>
+    </ul>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html" accesskey="1">Análisis de
+      algoritmos</a></li>
+      <li><a href="temporal.html" accesskey="2">Complejidad
+      temporal</a></li>
+      <li><a href="notacion.html" accesskey="3">Notación
+      asintótica</a></li>
+      <li><a href="#" accesskey="4">Complejidad espacial</a></li>
+      <li><a href="#" accesskey="5">Índice de artículos</a></li>
+    </ul>
+  </nav>
+  <section id="main">
+    <h2>Complejidad espacial</h2>
+    <p>La complejidad espacial es el estudio de la eficiencia de los
+    algoritmos en lo que respecta a su consumo de memoria.</p>
+    <p>Todo lo expuesto para la complejidad temporal es igualmente
+    válido para el estudio de la complejidad espacial, sustituyendo
+    tiempo empleado por espacio de memoria utilizado. Un razonamiento
+    similar al seguido con el coste temporal lleva a considerar
+    únicamente la evolución del consumo de memoria con la talla del
+    problema. En el estudio asintótico no es relevante si un algoritmo
+    consume la mitad o el doble que otro, pero sí que utilice una
+    cantidad de memoria que crece con el cuadrado de la talla
+    <var>n</var> cuando otro sólo requiere una cantidad de memoria
+    constante, por ejemplo. El concepto de paso también es utilizable
+    aquí, asociado al concepto de celda de memoria, no importa el número
+    de bytes que ocupa una variable, sólo importa si su tamaño es o no
+    función (y de qué orden) de <var>n</var>, la talla del problema.</p>
+  </section>
+  <aside>
+    <h2>Sitios de interés</h2>
+    <div>
+      <figure>
+        <figcaption>Técnicas de diseño de algoritmos</figcaption>
+        <p><a href="http://www.lcc.uma.es/~av/Libro/"><img src="tda.jpg"
+        alt="Libro de algoritmia"/></a></p>
+      </figure>
+      <figure>
+        <figcaption>Portal de algoritmia</figcaption>
+        <p><a href="http://www.algoritmia.net/"><img src="anet.gif"
+		alt="Portal de algoritmia"/></a></p>
+      </figure>
+      <figure>
+        <figcaption>Algoritmia</figcaption>
+        <p><a href="http://es.wikibooks.org/wiki/Algoritmia"><img
+        src="Wbooks.png" alt="Libro de algoritmia"/></a></p>
+      </figure>
+    </div>
+  </aside>
+  <footer>
+    <address>
+      <p>
+        <a href="mailto:phernandez@uniovi.es"
+          title="Escrito por Pedro Hernández">Pedro Hernández Arauzo</a>
+        <br />Última actualización
+        <time datetime="2014-09-28">28 de Septiembre de 2014</time>
+      </p>
+    </address>
+    <p>
+      Página del artículo: <a href="index.html">1</a>
+      <a href="temporal.html">2</a> <a href="notacion">3</a> 4
+    </p>
+  </footer>
+</body>
+</html>

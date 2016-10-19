@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+  <head>
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="WWW, HTML, XHTML, CSS" />
+    <meta name="description" content="Modelo de caja." />
+    <meta name="author" content="Pedro Hernández Araúzo" />
+    <title>Modelo de caja</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script type="text/javascript" src="funciones.js" defer="defer">
+    </script>
+  </head>
+  <body>
+    <h1>Modelo de caja</h1>
+    <hr />
+<!-- Ejemplo de código -->
+<pre id="doc_html">
+<code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Language" content="es" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html;
+    charset=utf-8" /&gt;
+    &lt;meta name="author" content="Pedro Hernández Araúzo" /&gt;
+    &lt;title&gt;Modelo de caja&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+    /*&lt;![CDATA[*/
+      body {
+        background-color: rgb(47,79,79);
+        margin: 2%;
+        padding: 5% 1em 2% 1em;
+        border: 1px solid rgb(255,255,0);
+      }
+      
+      h1 {
+        color: rgb(255,255,255);
+      }
+      
+      span {
+        background-color: rgb(0, 0, 255);
+        color: rgb(255,255,255);
+      }
+      
+      span.fuera {
+        margin: 1em;
+        padding: 2.25em;
+        border: 3px solid rgb(255,0,0);
+      }
+          
+      div {
+        background-color: rgb(255,255,0);
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        border: 3px double red;
+      }
+      
+      p {
+        background-color: rgb(248,248,255);
+        margin: 0.5em 5% 1em 30%;
+        padding: 1em 2em 1em 2em;
+        border: 3px solid rgb(0,0,0);
+      }
+    /*]]&gt;*/
+   &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Modelo de caja&lt;/h1&gt;
+    &lt;p&gt;La caja correspondiente a este párrafo está incluida
+    en la caja de contención del elemento principal &lt;span&gt;body&lt;/span&gt;,
+    coincidiendo la anchura de ambas al no estar fijada la
+    propiedad width&lt;/p&gt;
+    &lt;div&gt;
+      La caja de este elemento ocupará el 80% del ancho de la
+      caja de contención del &lt;span class="fuera"&gt;body&lt;/span&gt;, además
+      estará centrado al tomar las propiedades margin-left y margin-right
+      el valor auto.Esta es una caja anónima.
+      &lt;p&gt;
+        La caja de este párrafo, que está dentro del "div", queda
+        dentro de la caja de contención de éste.
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+  </body>
+</html>

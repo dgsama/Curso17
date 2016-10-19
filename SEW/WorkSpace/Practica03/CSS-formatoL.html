@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+  <head>
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="WWW, HTML, XHTML, CSS" />
+    <meta name="description" content="Contexto de formato de línea." />
+    <meta name="author" content="Pedro Hernández Araúzo" />
+    <title>Contexto de formato de línea</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script type="text/javascript" src="funciones.js" defer="defer">
+    </script>
+  </head>
+  <body>
+    <h1>Contexto de formato de línea</h1>
+    <hr />
+<!-- Ejemplo de código -->
+<pre id="doc_html">
+<code>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv="Content-Language" content="es" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html;
+    charset=utf-8" /&gt;
+    &lt;meta name="author" content="Pedro Hernández Araúzo" /&gt;
+    &lt;title&gt;Contexto de formato de línea&lt;/title&gt;
+    &lt;style type="text/css"&gt;
+    /*&lt;![CDATA[*/
+	   p {
+		  font-size: 120%;
+		  border: none;
+	   }
+			
+      p.amarillo {
+        color: rgb(0,0,0);
+        background-color: rgb(255,255,0);
+        padding: 1em;
+        margin-top: 30px;
+        border: 1px solid rgb(0,0,0);
+      }
+
+      em {
+		  font-size: 100%;
+		  border: 1px solid black;
+	   }
+			
+	   strong {
+		  font-size: 150%;
+		  border: 1px solid black;
+	   }
+				 
+    /*]]&gt;*/
+   &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Contexto de formato de línea&lt;/h1&gt;
+    &lt;p&gt;
+      Ejemplo de contexto de línea &lt;em&gt;con cajas de distintas
+	  alturas&lt;/em&gt; debido, en este caso, a los diferentes
+	  &lt;strong&gt;tamaños de las fuentes&lt;/strong&gt;.
+    &lt;/p&gt;
+    &lt;p class=&quot;amarillo&quot;&gt;
+      Observa que en el contexto de formato de línea las cajas se ubican
+      adyacentes en la línea y cuando una caja alcanza el extremo derecho
+      de la caja de contención continua en la línea siguiente (si es
+      necesario reduce o amplia el &lt;em&gt;viewport&lt;/em&gt;).
+    &lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+  </body>
+</html>

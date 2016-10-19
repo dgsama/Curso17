@@ -1,0 +1,34 @@
+body {
+	counter-reset: c1;
+}
+
+section {
+	counter-reset: c2;
+	counter-increment: c1;
+}
+
+section h2:before {
+	content: counter(c1) "." counter(c2) ". ";
+}
+
+section h2 {
+    counter-increment: c2;
+    counter-reset: c3;
+}
+
+section h3:before {
+    content: counter(c1) "." counter(c2) "." counter(c3) ". ";
+}
+
+section h3 {
+    counter-increment: c3;
+    counter-reset: c4;
+}
+
+section h4:before {
+    content: counter(c1) "." counter(c2) "." counter(c3) "." counter(c4) ". ";
+}
+
+section h4 {
+    counter-increment: c4;
+}

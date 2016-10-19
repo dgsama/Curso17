@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+  <head>
+    <meta http-equiv="Content-Language" content="es" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="WWW, HTML, XHTML, CSS" />
+    <meta name="description" content="Modelo de caja." />
+    <meta name="author" content="Pedro Hernández Arauzo" />
+    <title>Modelo de formato visual</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script type="text/javascript" src="funciones.js" defer="defer">
+    </script>
+  </head>
+  <body>
+    <h1>Propiedad z-index</h1>
+    <hr />
+<!-- Ejemplo de código -->
+<pre id="doc_html">
+<code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.1//EN&quot;
+&quot;http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;es&quot;&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Language&quot; content=&quot;es&quot; /&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;
+    charset=utf-8&quot; /&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;Pedro Hern&aacute;ndez Arauzo&quot; /&gt;
+    &lt;title&gt;Modelo de formato visual&lt;/title&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+    /*&lt;![CDATA[*/
+      body {
+        margin: 5px;
+        padding: 0;
+        border: 5px solid rgb(0,0,0);
+        text-align: justify;
+      }
+                
+      p.amarillo {
+        color: rgb(0,0,0);
+        background-color: rgb(255,255,0);
+        padding: 1em;
+        margin-left: 4em;
+        border: 3px solid rgb(255,0,0);
+      }
+
+      p.azul {
+        position: relative;
+        top: -80px;
+        left: 50px;
+        color: rgb(255,255,255);
+        background-color: rgb(0,0,255);
+        padding: 2px;
+        border: 3px solid rgb(255,0,0);
+        width: 70%;
+        z-index: -1;
+      }
+    /*]]&gt;*/
+   &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+     &lt;p class=&quot;amarillo&quot;&gt;
+       &lt;em&gt;El tenista suizo Roger Federer consigui&oacute;&lt;/em&gt; el pase para la final de
+       &lt;strong&gt;Roland Garros&lt;/strong&gt;, &lt;em&gt;segundo 'grande' de la temporada&lt;/em&gt;,
+       despu&eacute;s de derrotar &lt;strong&gt;(7-6 (5), 6-3, 3-6 y 7-6 (5))&lt;/strong&gt; a 
+       &lt;em&gt;Novak Djokovic&lt;/em&gt;. La segunda raqueta del planetacort&oacute; de ra&iacute;z
+       &lt;em&gt;la impresionante racha de Djokovic, que acumulaba 43&lt;/em&gt;&lt;em&gt;victorias
+       desde el inicio del curso, y le derrot&oacute; justo cuando el serbio
+       ten&iacute;a la primera oportunidad para alcanzar la cima del r&aacute;nking&lt;/em&gt;, ya que
+       de haber ganado, &lt;em&gt;el lunes hubiera aparecido arriba del todo en la
+       clasificaci&oacute;n de la ATP&lt;/em&gt;. No pudo ser, y el suizo tir&oacute; de calidad para
+       plantarse en su quinta final en Roland Garros tras tres horas y 39
+       minutos de brega. (CAJA DE L&Iacute;NEA AN&Oacute;NIMA)
+     &lt;/p&gt;
+     &lt;p class=&quot;azul&quot;&gt;
+       Rafa Nadal tiene su sexta final de Roland Garros tras batir a Andy Murray
+       en un encuentro que fue disputado a pesar de resolverse en tres sets, por
+       6-4, 7-5 y 6-4 en m&aacute;s de tres horas de juego. El n&uacute;mero uno espa&ntilde;ol sujeta
+       un asa de la que puede ser su sexta Copa de los Mosqueteros, las mismas que
+       logr&oacute; Bjon B&ouml;rg. El otro asa lo sujeta un renacido Roger Federer que corta
+       la racha de victorias de Djokovic.
+     &lt;/p&gt;
+     &lt;div&gt;
+       La Bolsa de Nueva York no encuentra atajos para abandonar la corriente
+       bajista con la que inaugur&oacute; el mes de junio (CAJA DE BLOQUE AN&Oacute;NIMA)
+       &lt;p&gt;Entre los m&uacute;ltiples escollos
+       del camino -la presi&oacute;n de Moody's sobre la deuda, los interrogantes que abre
+       el fin del plan de est&iacute;mulo, la crisis griega...-, la principal r&eacute;mora son
+       las referencias macro, que evidencian que la recuperaci&oacute;n econ&oacute;mica ha
+       perdido fuelle. Y de todas ellas, son los datos relacionados con el empleo
+       los que m&aacute;s preocupan.&lt;/p&gt;
+     &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Análisis de algoritmos</title>
+<link rel="stylesheet" type="text/css"
+href="estilo.css" media="screen"/>
+<style type="text/css">
+/*<![CDATA[
+body {
+    counter-reset: c1;
+}
+
+section h2:before {
+    counter-increment: c1;
+    content: counter(c1) ". ";
+}
+]]>*/
+</style>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="#" title="Página inicial del blog" tabindex="1"><img
+      src="algoritmia.jpg" alt="logo"/>Algoritmia y otras lides</a>
+    </h1>
+    <h2>1. Análisis de algoritmos</h2>
+    <ul id="ayuda">
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Navegación</a></li>
+      <li><a href="#">RSS</a></li>
+      <li>
+        <form method="post" action="#">
+		  <fieldset>
+			<input type="search" size="20" placeholder="Búsqueda"/>
+			<input type="submit" value="Buscar"/>
+		  </fieldset>
+        </form>
+      </li>
+    </ul>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#" accesskey="1">Análisis de algoritmos</a></li>
+      <li><a href="temporal.html" accesskey="2">Complejidad
+      temporal</a></li>
+      <li><a href="notacion.html" accesskey="3">Notación
+      asintótica</a></li>
+      <li><a href="espacial.html" accesskey="4">Complejidad
+      espacial</a></li>
+      <li><a href="#" accesskey="5">Índice de artículos</a></li>
+    </ul>
+  </nav>
+  <section id="main">
+    <h2>Análisis de algoritmos</h2>
+    <p>Puede ocurrir que la solución a un problema se pueda llevar a
+      cabo con algoritmos significativamente diferentes. Por otra parte,
+      ciertas decisiones sobre la representación de una abstracción de
+      datos pueden afectar de forma distinta a las operaciones del tipo
+      de dato. Y en estos casos, cabe preguntarse cómo se pueden
+      comparar distintos algoritmos que resuelven el mismo problema.</p>
+    <p>Una solución factible para comparar la rapidez de los
+      algoritmos sería mediante un procedimiento empírico, programando
+      los algoritmos (en algún lenguaje de programación) y ejecutándolos
+      para medir el tiempo que tarda en ejecutarse cada algoritmo para
+      diferentes entradas (tamaño y casos distintos). Sin embargo, esta
+      aproximación empírica tiene ciertos inconvenientes, no sólo
+      depende del tamaño del problema (tamaño o talla de los datos de
+      entrada), también depende de cómo se elijan los datos de entrada
+      (casos seleccionados para realizar el experimento) y de factores
+      externos que no aportan información sobre los algoritmos como, por
+      ejemplo, el lenguaje de programación elegido y la máquina en la
+      que se realice la ejecución.</p>
+    <p>En este artículo se presentarán criterios de comparación de
+      algoritmos basados en la eficiencia, es decir, en el mejor
+      aprovechamiento de los recursos computacionales. Se estudiaran dos
+      factores:</p>
+    <dl>
+      <dt>Coste o complejidad espacial</dt>
+      <dd>La cantidad de memoria que consume la estructura de
+        datos.</dd>
+      <dt>Coste o complejidad temploral</dt>
+      <dd>El tiempo que necesita el algoritmo para resolver un
+        problema.</dd>
+    </dl>
+    <p>Ambos determinan el <dfn><strong>coste</strong> o
+      <strong>complejidad computacional</strong></dfn>. No siempre
+      coincidirán consumo espacial óptimo con mínimo coste temporal; es
+      más, por lo general ambos factores entrarán en competencia, siendo
+      necesario adoptar un compromiso razonable entre ambos costes.</p>
+  </section>
+  <aside>
+    <h2>Sitios de interés</h2>
+    <div>
+      <figure>
+        <figcaption>Técnicas de diseño de algoritmos</figcaption>
+        <p><a href="http://www.lcc.uma.es/~av/Libro/"><img src="tda.jpg"
+        alt="Libro de algoritmia"/></a></p>
+      </figure>
+      <figure>
+        <figcaption>Portal de algoritmia</figcaption>
+        <p><a href="http://www.algoritmia.net/"><img src="anet.gif"
+		alt="Portal de algoritmia"/></a></p>
+      </figure>
+      <figure>
+        <figcaption>Algoritmia</figcaption>
+        <p><a href="http://es.wikibooks.org/wiki/Algoritmia"><img
+        src="Wbooks.png" alt="Libro de algoritmia"/></a></p>
+      </figure>
+    </div>
+  </aside>
+  <footer>
+    <address>
+      <p>
+        <a href="mailto:phernandez@uniovi.es"
+         title="Escrito por Pedro Hernández">Pedro Hernández Arauzo</a>
+         <br/>Última actualización
+         <time datetime="2016-10-01">01 de Octubre de 2016</time>
+      </p>  
+    </address>
+    <p>
+        Página del artículo: 1 <a href="temporal.html">2</a>
+        <a href="notacion.html">3</a> <a href="espacial.html">4</a>
+    </p>
+  </footer>
+</body>
+</html>
