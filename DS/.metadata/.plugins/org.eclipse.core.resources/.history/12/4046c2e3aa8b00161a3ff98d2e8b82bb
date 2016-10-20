@@ -1,9 +1,0 @@
-package figuras;
-
-public abstract class Figura {
-
-	
-	public boolean hePinchado();	
-	
-	
-}

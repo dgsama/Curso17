@@ -8,6 +8,7 @@ import comprobaciones.ComprobacionNumero;
 import comprobaciones.ComprobacionPredefinido;
 import comprobaciones.ComprobacionSueldo;
 import comprobaciones.ComprobacionTexto;
+import comprobaciones.composite.ComprobacionAlguna;
 
 public class Main {
 
@@ -31,13 +32,13 @@ public class Main {
 
 		formulario.addCampo(new Campo("Sueldo", new ComprobacionSueldo()));
 
-		formulario
-				.addCampo(new Campo("Ubicacion", new ComprobacionPredefinido(
-						"Santander", "Oviedo", "Cadiz"),
-						new ComprobacionCodigoPostal()));
+		formulario.addCampo(new Campo("Ubicacion", new ComprobacionAlguna(
+				new ComprobacionPredefinido("Santander", "Oviedo", "Cadiz"),
+				new ComprobacionCodigoPostal())));
 
 		formulario.addCampo(new Campo("Codigo Promocion",
-				new ComprobacionTexto(), new ComprobacionCodigoPromocion()));
+				new ComprobacionAlguna(new ComprobacionTexto(),
+						new ComprobacionCodigoPromocion())));
 
 		formulario.PideDatos();
 	}

@@ -1,5 +1,0 @@
-package clase4;
-
-public class CampoCodigoPostal extends Campo{
-
-}

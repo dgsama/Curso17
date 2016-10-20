@@ -1,0 +1,18 @@
+package Historial;
+
+import java.util.Stack;
+
+public class Historial {
+
+	private Stack<Cambio> stackUndo;
+	private Stack<Cambio> stackRedo;
+
+	public Historial() {
+		stackRedo = new Stack<Cambio>();
+		stackUndo = new Stack<Cambio>();
+	}
+
+	public void limpiarRedo() {
+		stackUndo.clear();
+	}
+}

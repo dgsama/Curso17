@@ -1,5 +1,0 @@
-package parte2;
-
-public enum Type {
-	CHILDRENS,NEW_RELEASE,REGULAR; 
-}

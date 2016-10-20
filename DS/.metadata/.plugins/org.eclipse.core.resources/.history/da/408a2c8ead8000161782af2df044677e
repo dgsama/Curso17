@@ -1,9 +1,0 @@
-package tipo;
-
-public class NewReleases {
-	private double price;
-	
-	public double getPrice(){
-		return price;
-	}
-}

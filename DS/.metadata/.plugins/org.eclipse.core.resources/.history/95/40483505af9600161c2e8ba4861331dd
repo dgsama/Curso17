@@ -1,0 +1,13 @@
+package editor;
+
+import java.util.Stack;
+
+public class Historial {
+	
+	private Stack stackUndo;
+	private Stack stackRedo;
+
+	public Historial(){
+		stackRedo = new Stack<E>();
+	}
+}
