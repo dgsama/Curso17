@@ -1,0 +1,12 @@
+package campos;
+
+import clase4.Campo;
+import comprobaciones.Comprobacion;
+
+public class CampoUbicacion extends Campo {
+
+	public CampoUbicacion(String etiqueta, Comprobacion... comprobaciones) {
+		super(etiqueta, comprobaciones);
+	}
+
+}

@@ -1,0 +1,14 @@
+package campos;
+
+import java.io.*;
+
+import comprobaciones.Comprobacion;
+import formulario.Campo;
+
+public class CampoPredefinido extends Campo {
+
+	public CampoPredefinido(String etiqueta, Comprobacion... comprobaciones) {
+		super(etiqueta, comprobaciones);
+	}
+
+}

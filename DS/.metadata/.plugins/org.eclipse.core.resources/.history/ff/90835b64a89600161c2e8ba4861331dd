@@ -1,0 +1,13 @@
+package campos;
+
+import Formulario.Campo;
+import comprobaciones.Comprobacion;
+
+public class CampoCodigoPromocion extends Campo {
+
+	public CampoCodigoPromocion(String etiqueta, Comprobacion... comprobaciones) {
+		super(etiqueta, comprobaciones);
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,15 @@
+package campos;
+
+import java.io.*;
+
+import clase4.Campo;
+import comprobaciones.Comprobacion;
+
+public class CampoTexto extends Campo {
+
+	public CampoTexto(String etiqueta, Comprobacion... comprobaciones) {
+		super(etiqueta, comprobaciones);
+		// TODO Auto-generated constructor stub
+	}
+
+}
