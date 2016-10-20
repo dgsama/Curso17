@@ -1,0 +1,17 @@
+package cambios;
+
+public class CambioCrear {
+
+	@Override
+	public void rehacer() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deshacer() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

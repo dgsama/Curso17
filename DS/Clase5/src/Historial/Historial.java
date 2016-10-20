@@ -2,26 +2,57 @@ package Historial;
 
 import java.util.Stack;
 
+import cambios.Cambio;
+
 public class Historial {
 
+	private static Historial instance = null;
 	private Stack<Cambio> stackUndo;
 	private Stack<Cambio> stackRedo;
 
-	public Historial() {
+	private Historial() {
 		stackRedo = new Stack<Cambio>();
 		stackUndo = new Stack<Cambio>();
 	}
 
 	public void nuevoCambio(Cambio c) {
 		stackUndo.push(c);
-		stackUndo.clear();
+		stackRedo.clear();
 	}
 
 	public void undoHecho() {
-		stackRedo.push(stackUndo.pop());
+		if (!stackRedo.isEmpty())
+			stackRedo.push(stackUndo.pop());
 	}
 
-	public void uredoHecho() {
-		stackUndo.push(stackRedo.pop());
+	public void redoHecho() {
+		if (!stackUndo.isEmpty())
+			stackUndo.push(stackRedo.pop());
+	}
+
+	public static Historial getInstance() {
+		if (instance == null) {
+			instance = new Historial();
+		}
+		return instance;
+	}
+
+	public void rehacer() {
+		if (!stackRedo.isEmpty()) {
+			stackUndo.peek().rehacer();
+			redoHecho();
+		} else {
+			System.out.println("No hay cambios que rehacer");
+		}
+
+	}
+
+	public void deshacer() {
+		if (!stackUndo.isEmpty()) {
+			stackUndo.peek().deshacer();
+			undoHecho();
+		} else {
+			System.out.println("No hay cambios que deshacer");
+		}
 	}
 }

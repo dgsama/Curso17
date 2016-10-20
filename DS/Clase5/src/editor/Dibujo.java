@@ -1,11 +1,20 @@
 package editor;
+
 import java.util.*;
 
+import Historial.Historial;
+
 public class Dibujo {
+	private Historial historial;
+
 	public void AddFigura(Figura figura) {
 		figuras.add(figura);
 	}
-	
+
+	public void RemoveFigura(Figura figura) {
+		figuras.remove(figura);
+	}
+
 	public void dibuja() {
 		for (Figura figura : figuras)
 			figura.dibujar();

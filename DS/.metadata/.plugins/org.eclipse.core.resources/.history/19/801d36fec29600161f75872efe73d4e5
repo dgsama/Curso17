@@ -1,0 +1,49 @@
+package Historial;
+
+import java.util.Stack;
+
+import cambios.Cambio;
+
+public class Historial {
+
+	private static Historial instance = null;
+	private Stack<Cambio> stackUndo;
+	private Stack<Cambio> stackRedo;
+
+	private Historial() {
+		stackRedo = new Stack<Cambio>();
+		stackUndo = new Stack<Cambio>();
+	}
+
+	public void nuevoCambio(Cambio c) {
+		stackUndo.push(c);
+		stackRedo.clear();
+	}
+
+	public void undoHecho() {
+		if (!stackRedo.isEmpty())
+			stackRedo.push(stackUndo.pop());
+	}
+
+	public void redoHecho() {
+		if (!stackUndo.isEmpty())
+			stackUndo.push(stackRedo.pop());
+	}
+
+	public static Historial getInstance() {
+		if(instance == null){
+			instance  = new Historial();
+		}
+		return instance;
+	}
+
+	public void rehacer() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void deshacer() {
+		// TODO Auto-generated method stub
+		
+	}
+}

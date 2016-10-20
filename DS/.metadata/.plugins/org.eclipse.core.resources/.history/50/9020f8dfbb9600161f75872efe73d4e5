@@ -1,0 +1,23 @@
+package cambios;
+
+public class CambioMover implements Cambio {
+
+	private int incX;
+	private int incY;
+
+	public CambioMover(Figure figure, int incX, int inc) {
+		this.incX = incX;
+		this.incY = incY;
+	}
+
+	@Override
+	public void rehacer() {
+
+	}
+
+	@Override
+	public void deshacer() {
+
+	}
+
+}

@@ -10,4 +10,8 @@
 <fullyQualifiedTypeName name="comprobaciones.composite.ComprobacionAlguna"/>
 <fullyQualifiedTypeName name="herramientas.Herramienta"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="editor.Figura"/>
+<fullyQualifiedTypeName name="editor.Dibujo"/>
+<fullyQualifiedTypeName name="cambios.Cambio"/>
+<fullyQualifiedTypeName name="Historial.Historial"/>
 </qualifiedTypeNameHistroy>

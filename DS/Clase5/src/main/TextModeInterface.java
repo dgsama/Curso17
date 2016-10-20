@@ -24,7 +24,7 @@ public class TextModeInterface {
 
 	public void run() throws IOException {
 		System.out.println("Comandos Herramientas: cuadrado, circulo, triangulo, seleccion");
-		System.out.println("Comandos Ratón: pinchar x,y / mover x,y / soltar x,y");
+		System.out.println("Comandos Ratï¿½n: pinchar x,y / mover x,y / soltar x,y");
 		System.out.println("Otros Comandos: dibujar, exit");
 		do {
 			System.out.print(">");
@@ -47,8 +47,12 @@ public class TextModeInterface {
 				editor.soltar(Integer.parseInt(line[1]), Integer.parseInt(line[2]));
 			else if (line[0].equals("dibujar"))
 				editor.dibujar();
+			else if (line[0].equals("undo"))
+				editor.deshacer();
+			else if (line[0].equals("redo"))
+				editor.rehacer();
 			else
-				System.out.println("Comando no válido");
+				System.out.println("Comando no vï¿½lido");
 
 		} while (true);
 	}

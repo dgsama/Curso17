@@ -1,5 +1,0 @@
-package comprobaciones;
-
-public class ComprobacionPredefinido implements Comprobacion{
-
-}

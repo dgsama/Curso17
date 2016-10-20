@@ -1,0 +1,5 @@
+package cambios;
+
+public interface Cambio {
+
+}

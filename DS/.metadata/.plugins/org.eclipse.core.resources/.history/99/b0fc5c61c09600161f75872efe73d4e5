@@ -1,0 +1,16 @@
+package cambios;
+
+import editor.Dibujo;
+import editor.Figura;
+
+public class CambioCrear {
+
+	private Dibujo dibujo;
+	private Figura figura;
+
+	public CambioCrear(Dibujo dibujo, FIgura figura) {
+		this.dibujo = dibujo;
+		this.figura = figura;
+	}
+
+}
