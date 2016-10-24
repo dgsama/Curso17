@@ -1,0 +1,132 @@
+package primeraParte;
+
+import java.sql.*;
+
+public class StatementVsPrepareStatement {
+
+	private static Connection con;
+	private static Statement st = null;
+	private static PreparedStatement ps = null;
+	private static ResultSet rs = null;
+	private static long tInicio = 0, tFin = 0, tTotal = 0;
+	private static int numeroVehiculos;
+	private static int iteraciones = 1000;
+
+	// Base de datos Hsql
+	private static String URL_HSQL = "jdbc:hsqldb:hsql://localhost";
+	private static String USER_HSQL = "SA";
+	private static String PASS_HSQL = "";
+
+	// Base de datos Oracle
+	private static String URL_ORACLE = "jdbc:oracle:thin:@156.35.94.99:1521:DESA";
+	private static String USER_ORACLE = "UO237464";
+	private static String PASS_ORACLE = "UO237464";
+
+	// Consulta
+	private static String CONSULTA = null;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static Connection getConnectionHsql() {
+		con = null;
+		try {
+			con = DriverManager.getConnection(URL_HSQL, USER_HSQL, PASS_HSQL);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+
+	}
+
+	private static Connection getConnectionOracle() {
+		con = null;
+		try {
+			con = DriverManager.getConnection(URL_ORACLE, USER_ORACLE,
+					PASS_ORACLE);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+
+	private void withHQSL() throws SQLException {
+		System.out.println("Comienza el programa. DB: " + URL_HSQL);
+		statement('h');
+		prepareStatement('h');
+	}
+
+	private void withOracle() throws SQLException {
+		System.out.println("Comienza el programa. DB: " + URL_ORACLE);
+		statement('o');
+		prepareStatement('o');
+	}
+
+	private void statement(char conex) throws SQLException {
+		if (conex == 'h') {
+			con = getConnectionHsql();
+		} else if (conex == 'o') {
+			con = getConnectionOracle();
+		}
+
+		tInicio = System.currentTimeMillis();
+
+		for (int i = 0; i < iteraciones; i++) {
+			st = con.createStatement();
+			rs = st.executeQuery("SELECT v.ID FROM TVEHICULOS v WHERE v.ID = "
+					+ i + ";");
+			rs.next();
+			if (rs.getInt(1) == i) {
+				numeroVehiculos++;
+			}
+
+		}
+
+		tFin = System.currentTimeMillis();
+		tTotal = tFin - tInicio;
+
+		System.out.println("Con Statement se han contado " + numeroVehiculos
+				+ " en un tiempo de -->" + tTotal);
+
+		numeroVehiculos = 0;
+		rs.close();
+		st.close();
+		con.close();
+
+	}
+
+	private void prepareStatement(char conex) throws SQLException {
+		if (conex == 'h') {
+			con = getConnectionHsql();
+		} else if (conex == 'o') {
+			con = getConnectionOracle();
+		}
+
+		tInicio = System.currentTimeMillis();
+
+		ps = con.prepareStatement("SELECT v.ID FROM TVEHICULOS v WHERE v.ID = ?;");
+		for (int i = 0; i < iteraciones; i++) {
+			ps.setInt(1, i);
+			rs = ps.executeQuery();
+			rs.next();
+			if (rs.getInt(1) == i) {
+				numeroVehiculos++;
+			}
+
+		}
+
+		tFin = System.currentTimeMillis();
+		tTotal = tFin - tInicio;
+
+		System.out.println("Con Statement se han contado " + numeroVehiculos
+				+ " en un tiempo de -->" + tTotal);
+
+		numeroVehiculos = 0;
+		rs.close();
+		st.close();
+		con.close();
+	}
+
+}

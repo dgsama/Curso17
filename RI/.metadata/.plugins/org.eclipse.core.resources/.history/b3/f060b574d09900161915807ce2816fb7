@@ -1,0 +1,79 @@
+package primeraParte;
+
+import java.sql.*;
+
+public class StatementVsPrepareStatement {
+
+	private static Connection con;
+	private static Statement st = null;
+	private static PreparedStatement ps = null;
+	private static ResultSet rs = null;
+	private static long tInicio = 0, tFin = 0, tTotal = 0;
+	private static int numeroVehiculos;
+	private static int iteraciones = 1000;
+
+	// Base de datos Hsql
+	private static String URL_HSQL = "jdbc:hsqldb:hsql://localhost";
+	private static String USER_HSQL = "SA";
+	private static String PASS_HSQL = "";
+
+	// Base de datos Oracle
+	private static String URL_ORACLE = "jdbc:oracle:thin:@156.35.94.99:1521:DESA";
+	private static String USER_ORACLE = "UO237464";
+	private static String PASS_ORACLE = "UO237464";
+
+	// Consulta
+	private static String CONSULTA = null;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	private static Connection getConnectionHsql() {
+		con = null;
+		try {
+			con = DriverManager.getConnection(URL_HSQL, USER_HSQL, PASS_HSQL);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+
+	}
+
+	private static Connection getConnectionOracle() {
+		con = null;
+		try {
+			con = DriverManager.getConnection(URL_ORACLE, USER_ORACLE,
+					PASS_ORACLE);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return con;
+	}
+
+	private void statementFromLocal() throws SQLException {
+		con = getConnectionHsql();
+
+		tInicio = System.currentTimeMillis();
+
+		tFin = System.currentTimeMillis();
+		tTotal = tFin - tInicio;
+		
+		System.out.println(""++""+tTotal);
+
+		rs.close();
+		st.close();
+		con.close();
+
+	}
+
+	private void statementFromOracle() throws SQLException {
+		con = getConnectionOracle();
+
+		rs.close();
+		st.close();
+		con.close();
+	}
+
+}

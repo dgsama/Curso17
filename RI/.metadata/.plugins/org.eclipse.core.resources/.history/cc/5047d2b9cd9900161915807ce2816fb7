@@ -1,0 +1,34 @@
+package primeraParte;
+
+import java.sql.Connection;
+
+public class StatementVsPrepareStatement {
+	
+	private static Connection con;
+	private static long tInicio = 0, tFin= 0;
+	
+	//Base de datos Hsql
+	private static String URL_HSQL="jdbc:hsqldb:";
+	private static String USER_HSQL="SA";
+	private static String PASS_HSQL="";
+	
+	//Base de datos Oracle
+	private static String URL_ORACLE=;
+	private static String USER_ORACLE="UO237464";
+	private static String PASS_ORACLE="UO237464";
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	
+	private static getConnectionHsql(){
+		con = 
+	}
+	
+	private static getConnectionOracle(){
+		
+	}
+}
