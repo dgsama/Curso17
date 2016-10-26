@@ -162,6 +162,12 @@ footer {
     border-bottom: 3px solid #001f3f;
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
+    display: flex;
+}
+
+footer>p {
+    text-align: right;
+    flex-grow: 1;
 }
 
 #ayuda {
@@ -241,10 +247,52 @@ h4 {
     clear: both;
 }
 
-th {
+#Tabla3 th {
     background-color: #00BFFF;
+    color: #0404B4;
+    font-size: 20px;
 }
 
-tbody {
+#Tabla3 tbody {
     background: white;
+}
+
+#Tabla3 tbody>tr:nth-child(2n) {
+    background: #A9F5F2;
+}
+
+aside {
+    text-align: center;
+}
+
+aside div {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+}
+
+aside figure {
+    padding: 4em;
+    text-align: center;
+}
+
+aside img {
+    max-width: 150px;
+}
+
+@media screen and (min-width:900px) {
+    aside div {
+        flex-direction: column;
+        min-height: 600px;
+    }
+    aside {
+        border-left: 0;
+        padding: 2em 1.5em;
+        display: table-cell;
+        background-color: #CEE3F6;
+    }
+    #main {
+        border-right: 0;
+        display: table-cell;
+    }
 }

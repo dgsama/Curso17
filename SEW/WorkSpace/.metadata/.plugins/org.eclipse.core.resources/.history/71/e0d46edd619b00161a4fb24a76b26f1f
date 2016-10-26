@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Notación asintótica</title>
+<link rel="stylesheet" type="text/css"
+href="estilo.css" media="screen"/>
+<style type="text/css">
+/*<![CDATA[
+section {
+    counter-reset: c2 1;
+}
+]]>*/
+</style>
+</head>
+<body>
+  <header>
+    <h1>
+      <a href="#" title="Página inicial del blog" tabindex="1"><img
+      src="algoritmia.jpg" alt="logo"/>Algoritmia y otras lides</a>
+    </h1>
+    <h2>A  nálisis de algoritmos</h2>
+    <ul id="ayuda">
+      <li><a href="#">Acerca de</a></li>
+      <li><a href="#">Navegación</a></li>
+      <li><a href="#">RSS</a></li>
+      <li>
+        <form method="post" action="#">
+		  <fieldset>
+			<input type="search" size="20" placeholder="Búsqueda"/>
+			<input type="submit" value="Buscar"/>
+		  </fieldset>
+        </form>
+      </li>
+    </ul>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html" accesskey="1">Análisis de
+      algoritmos</a></li>
+      <li><a href="temporal.html" accesskey="2">Complejidad
+      temporal</a></li>
+      <li><a href="#" accesskey="3">Notación asintótica</a></li>
+      <li><a href="espacial.html" accesskey="4">Complejidad
+      espacial</a></li>
+      <li><a href="#" accesskey="5">Índice de artículos</a></li>
+    </ul>
+  </nav>
+  <section id="main">
+    <h2>Notación asintótica</h2>
+    <p>En general, el análisis de coste de los algoritmos es
+     especialmente relevante cuando estos se aplican a problemas de gran
+     tamaño (o talla). Casi siempre los problemas pequeños se pueden
+     resolver de cualquier forma y las limitaciones aparecen al tratar
+     problemas grandes. En todo caso, debe tenerse en cuenta que
+     cualquier técnica de ingeniería, si funciona, acaba aplicándose al
+     problema más grande que sea posible: las tecnologías de éxito,
+     antes o después, acaban llevándose al límite de sus posibilidades.</p>
+     <p>Estas consideraciones llevan a estudiar el comportamiento de un
+     algoritmo cuando se fuerza el tamaño n del problema al que se
+     aplica. Matemáticamente hablando, cuando n tiende a infinito, es
+     decir, su comportamiento asintótico (sin considerar constantes). Se
+     introducirán, por tanto, ciertas herramientas matemáticas
+     fundamentales que simplifican notablemente el análisis de costes y
+     permiten expresar de forma muy concisa los resultados. Aprenderemos
+     a caracterizar el coste mediante funciones simples que acoten
+     superior e inferiormente el coste de todas las posibles entradas
+     para tallas suficientemente grandes. Para ello se necesitan definir
+     familias de cotas.</p>
+     <h3>Orden y omega</h3>
+     <p>La notación <span class="ecuacion">&#927;(f(n))</span>, que ha
+     de leerse del orden de <span class="ecuacion">f(n)</span>, es
+     útil para estimar una cota superior del tiempo de ejecución de un
+     algoritmo para entradas de talla <var>n</var>. La <a href="#Figura3"
+     >Figura 3</a> muestra qué significa que una función <span
+     class="ecuacion">g(n)</span> sea <span
+     class="ecuacion">&#927;(f(n))</span>.</p>
+     <figure id ="Figura3">
+        <p class="center"><img src="orden.png"
+        alt="órdenes de crecimiento"/></p>
+        <figcaption class="center" title="Figura 3">La función <span
+        class="ecuacion">g(n)</span> "es del orden de" <span
+        class="ecuacion">f(n)</span></figcaption>
+     </figure>
+     <p>También es interesante poder estimar una cota inferior del
+     tiempo de ejecución de un algoritmo para entradas de talla
+     <var>n</var>. La notación <span class="ecuacion">&#937;(f(n))</span>,
+     que se lee omega de <span class="ecuacion">f(n)</span>, es útil
+     para estimar una cota inferior del tiempo de ejecución de un
+     algoritmo para entradas de talla <var>n</var>.</p>
+     <h3>Orden exacto</h3>
+     <p>El análisis asintótico de un algoritmo resultaría más
+     satisfactorio si pudiéramos acotar a la vez, superior e
+     inferiormente, su tiempo de ejecución por una misma función f(n).
+     Para ello se introduce una última notación</p>
+    <figure class="ecuacion">
+      <p class="center">&#920;(f(n)) = &#927;(f(n))
+      &#8745; &#937;(f(n))</p>
+    </figure>
+    <p>
+     que se lee del orden exacto de <span class="ecuacion">f(n)</span>.
+    </p>
+    <h3>Órdenes de complejidad</h3>
+    <p>Se dice que <span class="ecuacion">&#927;(f(n))</span> define un
+    orden de complejidad. Las funciones que pertenecen a cada orden
+    tienen un adjetivo que las identifican y que se recoge en la
+    siguiente tabla:</p>
+    <figure id="Tabla2">
+      <table>
+        <tbody>
+          <tr>
+            <th rowspan="3">Sublineales</th>
+            <td rowspan="3"></td>
+            <td class="cursiva">Constantes</td>
+            <td class="ecuacion center">&#927;(1)</td>
+          </tr>
+          <tr>
+            <td class="cursiva">Logarítmicas</td>
+            <td class="ecuacion center">&#927;(log n)</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="ecuacion center">&#927;(n<sup>1/2</sup>)</td>
+          </tr>
+          <tr>
+            <th>Lineales</th>
+            <td></td>
+            <td></td>
+            <td class="ecuacion center">&#927;(n)</td>
+          </tr>
+          <tr>
+            <th rowspan="5">Superlineales</th>
+            <td></td>
+            <td></td>
+            <td class="ecuacion center">&#927;(n log n)</td>
+          </tr>
+          <tr>
+            <td class="cursiva" rowspan="2">Polinómicas</td>
+            <td class="cursiva">Cuadráticas</td>
+            <td class="ecuacion center">&#927;(n<sup>2</sup>)</td>
+          </tr>
+          <tr>
+            <td class="cursiva">Cúbicas</td>
+            <td class="ecuacion center">&#927;(n<sup>3</sup>)</td>
+          </tr>
+          <tr>
+            <td class="cursiva">Exponencial</td>
+            <td></td>
+            <td class="ecuacion center">&#927;(2<sup>n</sup>)</td>
+          </tr>
+          <tr>
+            <td class="cursiva">Factorial</td>
+            <td></td>
+            <td class="ecuacion center">&#927;(n!)</td>
+          </tr>
+        </tbody>
+      </table>
+      <figcaption class="center" title="Tabla 2">
+        Nombres de las funciones pertenecientes a distintos órdenes
+      </figcaption>
+    </figure>
+    <p>Se dice que el coste temporal de un algoritmo es lineal cuando es
+     de <span class="ecuacion">&#927;(n)</span> y logarítmico cuando es
+     de <span class="ecuacion">&#927;(log ⁡n)</span>, etc. En la <a
+     href="#Figura4">Figura 4</a> y <a href="#Figura5">Figura 5</a> se
+     han comparado los órdenes sublineales y superlineales con el orden
+     lineal, respectivamente.</p>
+     <figure id="Figura4">
+      <p><img src="sublineales.png" alt="órdenes sublineales"/></p>
+      <figcaption title="Figura 4">
+        Órdenes sublineal y lineal
+      </figcaption>
+     </figure>
+     <figure id="Figura5">     
+      <p><img src="superlineales.png" alt="órdenes superlineales"/></p>
+      <figcaption title="Figura 5">
+        Órdenes lineal y superlineales
+      </figcaption>
+     </figure>
+     <h4 class="limpiar">Impacto práctico</h4>
+     <p>Para hacernos una idea de la importancia de los órdenes de
+     complejidad en la <a href="#Tabla3">Tabla 3</a> se presentan los
+     tiempos utilizados por las funciones de complejidad para resolver
+     un problema de talla <var>n</var>.</p>
+     <p>Se observa que los algoritmos de complejidad <span
+     class="ecuacion">&#927;(n)</span> y <span 
+     class="ecuacion">&#927;(n log ⁡n)</span> son los que muestran un
+     comportamiento más natural, al doblar el número de datos procesados
+     se duplica el tiempo necesario para procesarlos.</p>
+     <p>Los algoritmos de complejidad logarítmica crecen muy lentamente
+     conforme n crece. Necesitan poco más tiempo para procesar el doble
+     de datos.</p>
+     <p>Los algoritmos de complejidad polinómica presentan dificultades
+     a medida que crece la talla, la práctica viene a decirnos que son
+     el límite de lo tratable. Los cuadráticos dejan de ser útiles para
+     tallas medias o grandes y los cúbicos sólo son útiles para
+     problemas pequeños, complejidades polinómicas de mayor potencia
+     prácticamente son inaceptables.</p>
+     <p>Cualquier algoritmo por encima de una complejidad polinómica se
+     dice intratable y sólo será aplicable a problemas muy pequeños.</p>
+     <figure id="Tabla3">
+       <table>
+         <caption>Funciones de complejidad</caption>
+         <thead>
+           <tr>
+             <th>Talla</th>
+             <th>log n</th>
+             <th>n</th>
+             <th>n log n</th>
+             <th>n<sup>2</sup></th>
+             <th>n<sup>3</sup></th>
+             <th class="ecuacion">2<sup>n</sup></th>
+             <th>n!</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td>5</td>
+             <td>3</td>
+             <td>5</td>
+             <td>12</td>
+             <td>25</td>
+             <td>125</td>
+             <td>32</td>
+             <td>120</td>
+           </tr>
+           <tr>
+             <td>10</td>
+             <td>4</td>
+             <td>10</td>
+             <td>33</td>
+             <td>100</td>
+             <td>1.000</td>
+             <td>1.024</td>
+             <td>3,63 10<sup>6</sup></td>
+           </tr>
+           <tr>
+             <td>100</td>
+             <td>7</td>
+             <td>100</td>
+             <td>664</td>
+             <td>10<sup>4</sup></td>
+             <td>10<sup>6</sup></td>
+             <td>1,27 10<sup>30</sup></td>
+             <td>&gt; 10<sup>100</sup></td>
+           </tr>
+           <tr>
+             <td>200</td>
+             <td>8</td>
+             <td>200</td>
+             <td>1.529</td>
+             <td>4 10<sup>4</sup></td>
+             <td>8 10<sup>6</sup></td>
+             <td>1,6 10<sup>60</sup></td>
+             <td>&gt; 10<sup>100</sup></td>
+           </tr>
+           <tr>
+             <td>1.000</td>
+             <td>10</td>
+             <td>1.000</td>
+             <td>9.965</td>
+             <td>10<sup>6</sup></td>
+             <td>10<sup>9</sup></td>
+             <td>&gt; 10<sup>100</sup></td>
+             <td>&gt; 10<sup>100</sup></td>
+           </tr>
+           <tr>
+             <td>2.000</td>
+             <td>11</td>
+             <td>2.000</td>
+             <td>2,2 10<sup>4</sup></td>
+             <td>4 10<sup>6</sup></td>
+             <td>8 10<sup>9</sup></td>
+             <td>&gt; 10<sup>100</sup></td>
+             <td>&gt; 10<sup>100</sup></td>
+           </tr>
+           <tr>
+             <td>10.000</td>
+             <td>14</td>
+             <td>10<sup>4</sup></td>
+             <td>1,33 10<sup>5</sup></td>
+             <td>10<sup>8</sup></td>
+             <td>10<sup>12</sup></td>
+             <td>&gt; 10<sup>100</sup></td>
+             <td>&gt; 10<sup>100</sup></td>
+           </tr>
+         </tbody>
+       </table>
+       <figcaption class="center" title="Tabla 3">Tiempo en función de la
+       talla paralas funciones de complejidad más conumnes</figcaption>
+     </figure>
+     <p>El comportamiento de las funciones de complejidad a medida que
+     crece la talla n del problema expuesto en la <a href="#Tabla3"
+     >Tabla 3</a>, explica el porqué de la búsqueda de algoritmos de
+     complejidad lineal incluso, si es factible y con algo de suerte,
+     de complejidad logarítmica. De no encontrarse un algoritmo de
+     complejidad lineal, un algoritmo de complejidad <span
+     class="ecuacion">&#927;(n log ⁡n)</span> no es mala alternativa.
+     Si se encuentran soluciones polinomiales, se puede tratar con ellas
+     a pesar de las limitaciones que tienen para problemas de talla
+     media y grande; pero ante soluciones de complejidad exponencial más
+     vale seguir buscando.</p>
+  </section>
+  <aside>
+    <h2>Sitios de interés</h2>
+    <div>
+      <figure>
+        <figcaption>Técnicas de diseño de algoritmos</figcaption>
+        <p><a href="http://www.lcc.uma.es/~av/Libro/"><img src="tda.jpg"
+        alt="Libro de algoritmia"/></a></p>
+      </figure>
+      <figure>
+        <figcaption>Portal de algoritmia</figcaption>
+        <p><a href="http://www.algoritmia.net/"><img src="anet.gif"
+		alt="Portal de algoritmia"/></a></p>
+      </figure>
+      <figure>
+        <figcaption>Algoritmia</figcaption>
+        <p><a href="http://es.wikibooks.org/wiki/Algoritmia"><img
+        src="Wbooks.png" alt="Libro de algoritmia"/></a></p>
+      </figure>
+    </div>
+  </aside>
+  <footer>
+    <address>
+      <p>
+        <a href="mailto:phernandez@uniovi.es"
+          title="Escrito por Pedro Hernández">Pedro Hernández Arauzo</a>
+        <br />Última actualización
+        <time datetime="2014-09-28">28 de Septiembre de 2014</time>
+      </p>
+    </address>
+    <p>
+      Página del artículo: <a href="index.html">1</a>
+      <a href="temporal.html">2</a> 3 <a href="espacial.html">4</a>
+    </p>
+  </footer>
+</body>
+</html>
