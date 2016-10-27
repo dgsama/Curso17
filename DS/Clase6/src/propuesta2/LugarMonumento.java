@@ -10,36 +10,19 @@ public class LugarMonumento extends Monumento implements Lugar {
 		super(name, author, address);
 	}
 
-	public String getNombre() {
-		return getNombre();
-	}
-
+	@Override
 	public Coordenadas getCoordinates() {
-		/* Hacerlo */
-		return null;
+		return new GPS().getCoordenadas(getDirección());
 	}
 
+	@Override
 	public String getTooltipText() {
-		/* Hacerlo */
-		return null;
+		return "Nombre: " + getNombre() + ".\nAutor: " + getAutor() + ".";
 	}
 
+	@Override
 	public void open() {
-		/* Hacerlo */
-	}
-
-	// En el main sería:
-	// ----------------------------------------------
-	// Main -----------------------------------
-	public static void main(String[] args) {
-
-		LugarMonumento coliseo = new LugarMonumento("Coliseo", "Vespasiano",
-				"Avenida del Coliseo 1. Roma");
-
-		Mapa map = new Mapa();
-
-		map.add(coliseo); // Ahora sí se puede
-		map.dibujar();
+		// TODO Auto-generated method stub
 
 	}
 

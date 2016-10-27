@@ -1,0 +1,33 @@
+package propuesta2;
+
+import model.*;
+import components.*;
+import vista.*;
+
+public class LugarMonumento extends Monumento implements Lugar {
+
+	private GPS gps;
+
+	public LugarMonumento(String name, String author, String address) {
+		super(name, author, address);
+		gps = new GPS();
+	}
+
+	@Override
+	public Coordenadas getCoordinates() {
+		return gps.getCoordenadas(getDirección());
+	}
+
+	@Override
+	public String getTooltipText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

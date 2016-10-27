@@ -1,0 +1,36 @@
+package propuesta2;
+
+import components.Coordenadas;
+import vista.Lugar;
+import model.Foto;
+
+public class LugarFoto extends Foto implements Lugar {
+
+	public LugarFoto(String description, String user, Coordenadas coordinates) {
+		super(description, user, coordinates);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String getNombre() {
+		return getDescripción();
+	}
+
+	@Override
+	public Coordenadas getCoordinates() {
+		return getCoordenadas();
+	}
+
+	@Override
+	public String getTooltipText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

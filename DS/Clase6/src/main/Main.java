@@ -46,5 +46,4 @@ public class Main {
 		map.longClick(21, 21); // Bajarse foto
 		map.longClick(31, 31); // Llamar al restaurante
 	}
-
 }

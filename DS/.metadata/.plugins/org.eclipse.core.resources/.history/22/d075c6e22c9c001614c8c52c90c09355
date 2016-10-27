@@ -1,0 +1,20 @@
+package components;
+
+public class GPS {
+
+	public void navigate(String address) {
+		System.out.println("GPS: Gire a la derecha. Ha llegado a '" + address
+				+ "'");
+	}
+
+	public Coordenadas getCoordenadas(String dirección) {
+		// Cálculo de relleno.
+		// Devuelve la posición en función de la primera letra
+		double number = (dirección.toLowerCase().charAt(0) - 'a') * 10 + 10;
+		return new Coordenadas(number, number);
+	}
+
+	public String getDirección(Coordenadas coordenadas) {
+		return coordenadas.toString();
+	}
+}
