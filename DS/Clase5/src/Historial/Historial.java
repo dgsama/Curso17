@@ -20,14 +20,6 @@ public class Historial {
 		stackRedo.clear();
 	}
 
-	public void undoHecho() {
-		stackRedo.push(stackUndo.pop());
-	}
-
-	public void redoHecho() {
-		stackUndo.push(stackRedo.pop());
-	}
-
 	public static Historial getInstance() {
 		if (instance == null) {
 			instance = new Historial();
@@ -37,8 +29,9 @@ public class Historial {
 
 	public void rehacer() {
 		if (!stackRedo.isEmpty()) {
-			stackUndo.peek().rehacer();
-			redoHecho();
+			Cambio c = stackRedo.pop();
+			c.rehacer();
+			stackUndo.push(c);
 		} else {
 			System.out.println("No hay cambios que rehacer");
 		}
@@ -47,8 +40,9 @@ public class Historial {
 
 	public void deshacer() {
 		if (!stackUndo.isEmpty()) {
-			stackUndo.peek().deshacer();
-			undoHecho();
+			Cambio c = stackUndo.pop();
+			c.deshacer();
+			stackRedo.push(c);
 		} else {
 			System.out.println("No hay cambios que deshacer");
 		}
