@@ -2,6 +2,8 @@ package herramientas;
 
 import java.awt.Point;
 
+import cambios.CambioCrear;
+import Historial.Historial;
 import editor.*;
 
 
@@ -22,6 +24,7 @@ public abstract class HerramientaCreacion implements Herramienta {
 		fin = new Point(x, y);
 		Figura figura = doCreaFigura(inicio, fin);
 		editor.getDibujo().AddFigura(figura);
+		Historial.getInstance().addCambio(new CambioCrear(editor.getDibujo(), figura));
 		editor.finHerramienta();
 	}
 

@@ -15,19 +15,17 @@ public class Historial {
 		stackUndo = new Stack<Cambio>();
 	}
 
-	public void nuevoCambio(Cambio c) {
+	public void addCambio(Cambio c) {
 		stackUndo.push(c);
 		stackRedo.clear();
 	}
 
 	public void undoHecho() {
-		if (!stackRedo.isEmpty())
-			stackRedo.push(stackUndo.pop());
+		stackRedo.push(stackUndo.pop());
 	}
 
 	public void redoHecho() {
-		if (!stackUndo.isEmpty())
-			stackUndo.push(stackRedo.pop());
+		stackUndo.push(stackRedo.pop());
 	}
 
 	public static Historial getInstance() {

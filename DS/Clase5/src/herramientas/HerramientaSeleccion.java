@@ -1,10 +1,10 @@
-
 package herramientas;
 
 import java.awt.Point;
 
+import cambios.CambioMover;
+import Historial.Historial;
 import editor.*;
-
 
 public class HerramientaSeleccion implements Herramienta {
 
@@ -25,6 +25,9 @@ public class HerramientaSeleccion implements Herramienta {
 
 	public void soltar(int x, int y) {
 		mueveIncremento(x, y);
+		Historial.getInstance().addCambio(
+				new CambioMover(seleccionada, (int) (x - posicion.getX()),
+						(int) (y - posicion.getY())));
 	}
 
 	private void mueveIncremento(int x, int y) {
