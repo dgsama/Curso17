@@ -1,0 +1,7 @@
+package model;
+
+import vista.Lugar;
+
+public class LugarIf implements Lugar{
+
+}

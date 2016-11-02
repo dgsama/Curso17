@@ -1,0 +1,32 @@
+package propuesta2;
+
+import components.Coordenadas;
+import vista.Lugar;
+import model.Restaurante;
+
+public class LugarRestaurante extends Restaurante implements Lugar{
+
+	public LugarRestaurante(String name, String address, String phone) {
+		super(name, address, phone);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Coordenadas getCoordinates() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getTooltipText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

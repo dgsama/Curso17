@@ -1,0 +1,33 @@
+package model;
+
+import components.Coordenadas;
+
+import vista.Lugar;
+
+public class LugarIf implements Lugar{
+
+	@Override
+	public String getNombre() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Coordenadas getCoordinates() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getTooltipText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void open() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
