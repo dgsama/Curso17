@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/visores"
+	xmlns="http://www.example.org/visores">
+
+	<!-- 1. elemento raíz -->
+	<xs:element name="visores">
+	</xs:element>
+
+    <!-- 2. elemento defecto -->
+	<xs:element name="defecto">
+	</xs:element>
+
+    <!-- 3. tipo torden: entero entre -1 y +1
+            (valores del atributo orden)     -->
+
+		  
+    <!-- 4. tipo tcolor
+            Cadena: 'transparent' o RGB en formato hexadecimal -->
+
+			
+	<!-- elemento color_fondo -->
+	<xs:element name="color_fondo" type="tcolor"/>
+
+    <!-- 5. elemento área_imagen -->
+	<xs:element name="área_imagen">
+	</xs:element>
+
+	
+    <!-- elemento relleno_imagen -->
+	<xs:element name="relleno_imagen">
+		<xs:simpleType>
+			<xs:restriction base="xs:byte">
+				<xs:minInclusive value="0"/>
+				<xs:maxInclusive value="25"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+    <!-- 6. tipo tancho: entero entre 100 y 800 
+         (contenido del elemento ancho_imagen) -->   
+ 
+ 
+    <!-- 7. elemento ancho_imagen -->
+	<xs:element name="ancho_imagen">
+	</xs:element>
+
+	
+    <!-- elemento color_texto -->
+	<xs:element name="color_texto" type="tcolor"/>
+
+    <!-- elemento área_texto -->
+	<xs:element name="área_texto">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="texto"/>
+				<xs:element ref="tamaño_fuente"/>
+				<xs:element ref="color_fondo"/>
+				<xs:element ref="color_texto"/>
+			</xs:sequence>
+			<xs:attribute name="orden" type="torden" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+    <!-- 8. tipo talineación
+            (valores del atributo alineación) -->
+
+			
+    <!-- 9. elemento texto -->
+	<xs:element name="texto">
+	</xs:element>
+	
+	
+    <!-- elemento descripción -->
+	<xs:element name="descripción" type="xs:normalizedString"/>
+
+    <!-- elemento tamaño_fuente -->
+    <xs:element name="tamaño_fuente">
+        <xs:simpleType>
+            <xs:restriction base="xs:byte">
+                <xs:minInclusive value="7"/>
+                <xs:maxInclusive value="18"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <!-- tipo topacidad: real del intervalo [0, 1]
+         (valores del atributo opacidad)           -->
+	<xs:simpleType name="topacidad">
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+    
+    <!-- 10. elemento capa_superpuesta -->
+	<xs:element name="capa_superpuesta">
+	</xs:element>
+
+	
+    <!-- elemento opacidad -->
+	<xs:element name="opacidad" type="topacidad"/>
+	
+    <!-- 11. elemento presentación -->
+	<xs:element name="presentación">
+	</xs:element>
+
+    <!-- 12. elemento visor -->
+	<xs:element name="visor">
+	</xs:element>
+
+    <!-- tipo t_tema
+         (contenido del elemento tema) -->	
+	<xs:simpleType name="t_tema">
+	   <xs:restriction base="xs:string">
+           <xs:enumeration value="animales"/>
+           <xs:enumeration value="aviones"/>
+           <xs:enumeration value="castillos"/>
+           <xs:enumeration value="coches"/>
+           <xs:enumeration value="paisajes"/>
+           <xs:enumeration value="posters"/>
+	   </xs:restriction>
+	</xs:simpleType>
+
+	
+	<!-- 13. elemento tema -->
+	<xs:element name="tema">
+	</xs:element>
+
+    <!-- elemento botones -->
+	<xs:element name="botones">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="posición"/>
+			</xs:sequence>
+			<xs:attribute name="alineación" type="talineación" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+    <!-- elemento posición -->
+	<xs:element name="posición">
+		<xs:simpleType>
+			<xs:restriction base="xs:normalizedString">
+                <xs:enumeration value="top"/>
+                <xs:enumeration value="right"/>
+				<xs:enumeration value="bottom"/>
+                <xs:enumeration value="left"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+</xs:schema>
