@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT visores (defecto, visor+) > <!-- 1. COMPLETAR -->
+<!ELEMENT defecto (área_imagen, área_texto, capa_superpuesta, presentación)>
+<!ELEMENT área_imagen (ancho_imagen, color_fondo, relleno_imagen?) >  <!-- 2. COMPLETAR -->
+<!ELEMENT área_texto (texto, color_fondo, color_texto)>
+<!-- 3. Definición de atr_orden y atributos -->
+<!ENTITY % atr_orden "orden NMTOKEN #REQUIRED">
+<!ATTLIST área_texto %atr_orden;>
+<!ATTLIST área_imagen %atr_orden;>
+<!-- Fin 3-->
+<!ELEMENT ancho_imagen (#PCDATA)>
+<!ELEMENT color_fondo (#PCDATA)>
+<!ELEMENT relleno_imagen (#PCDATA)>
+<!ATTLIST ancho_imagen 
+relacion (4:3 | 16:9) #REQUIRED>  <!-- 4. COMPLETAR -->
+<!-- 5. Definición del elemento texto y atributos -->
+<!ELEMENT descripción (#PCDATA)>
+<!ELEMENT capa_superpuesta (color_fondo, opacidad)>
+<!ELEMENT opacidad (#PCDATA)>
+<!-- 6. Definición del elemento presentación y atributos -->
+<!ELEMENT color_texto (#PCDATA)>
+<!-- 7. Definición del elemento visor y atributos -->
+<!-- 8. Definición del elemento tema y atributos -->
+<!ELEMENT botones (posición)>
+<!ATTLIST botones
+	alineación (left | center | right) #REQUIRED>
+<!ELEMENT posición (#PCDATA)>

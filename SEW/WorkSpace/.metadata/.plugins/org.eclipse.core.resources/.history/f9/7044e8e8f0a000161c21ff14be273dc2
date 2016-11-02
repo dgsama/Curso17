@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE visores SYSTEM "visores.dtd" >
+<visores>
+  <defecto>
+    <área_imagen orden="1">
+      <ancho_imagen relacion="4:3">600</ancho_imagen>
+      <color_fondo>#5B2C6F</color_fondo>
+    </área_imagen>
+    <área_texto orden="2">
+      <texto alineación="left" tipo="título">
+        <descripción>Hola soy una descripción</descripción>
+      </texto>
+      <color_fondo>#5B2C6F  </color_fondo>
+      <color_texto>#FFFFFF</color_texto>
+    </área_texto>
+    <capa_superpuesta>
+      <color_fondo>#5B2C6F  </color_fondo>
+      <opacidad>1</opacidad>
+    </capa_superpuesta>
+    <presentación tiempo_transición="3600"/>
+  </defecto>
+  <visor1 borde="" nombre="visor 1">
+    <tema número="30">Animales</tema>
+    <área_imagen orden="3">
+      <ancho_imagen relacion="4:3">500</ancho_imagen>
+      <color_fondo>#5B2C6F</color_fondo>
+    </área_imagen>
+    <área_texto orden="4">
+      <texto alineación="left" tipo="título">
+        <descripción>Un gatito muy mono comiendo un pastel</descripción>
+      </texto>
+      <color_fondo>#5B2C6F</color_fondo>
+      <color_texto>#FFFFFF</color_texto>
+    </área_texto>
+    <capa_superpuesta>
+      <color_fondo>#5B2C6F</color_fondo>
+      <opacidad>1</opacidad>
+    </capa_superpuesta>
+    <presentación tiempo_transición="3600"/>
+    <botones alineación="left">
+      <posición>top</posición>
+    </botones>
+  </visor1>
+    <visor2 borde="" nombre="visor 2">
+    <tema número="30">paisajes</tema>
+    <área_imagen orden="5">
+      <ancho_imagen relacion="4:3">500</ancho_imagen>
+      <color_fondo>#5B2C6F</color_fondo>
+    </área_imagen>
+    <área_texto orden="6">
+      <texto alineación="left" tipo="título">
+        <descripción>Es un paisaje de Van Gogh</descripción>
+      </texto>
+      <color_fondo>#5B2C6F</color_fondo>
+      <color_texto>#FFFFFF</color_texto>
+    </área_texto>
+    <capa_superpuesta>
+      <color_fondo>#5B2C6F</color_fondo>
+      <opacidad>1</opacidad>
+    </capa_superpuesta>
+    <presentación tiempo_transición="3600"/>
+    <botones alineación="left">
+      <posición>top</posición>
+    </botones>
+  </visor2>
+</visores>

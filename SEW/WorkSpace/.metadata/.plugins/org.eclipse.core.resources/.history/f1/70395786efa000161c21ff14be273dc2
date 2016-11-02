@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE visores SYSTEM "WebContent/visores.dtd" >
+<visores>
+  <defecto>
+    <área_imagen orden="nmtoken">
+      <ancho_imagen relacion="4:3">600</ancho_imagen>
+      <color_fondo>#ABCDEF</color_fondo>
+    </área_imagen>
+    <área_texto orden="nmtoken">
+      <texto alineación="left" tipo="título">
+        <descripción>descripción</descripción>
+      </texto>
+      <color_fondo>#ABCDEF</color_fondo>
+      <color_texto>#000000</color_texto>
+    </área_texto>
+    <capa_superpuesta>
+      <color_fondo>color_fondo</color_fondo>
+      <opacidad>opacidad</opacidad>
+    </capa_superpuesta>
+    <presentación tiempo_transición="nmtoken"/>
+  </defecto>
+  <visor borde="" nombre="nmtoken">
+    <tema número="30">tema</tema>
+    <área_imagen orden="nmtoken">
+      <ancho_imagen relacion="4:3">ancho_imagen</ancho_imagen>
+      <color_fondo>color_fondo</color_fondo>
+    </área_imagen>
+    <área_texto orden="nmtoken">
+      <texto alineación="left" tipo="título">
+        <descripción>descripción</descripción>
+      </texto>
+      <color_fondo>color_fondo</color_fondo>
+      <color_texto>color_texto</color_texto>
+    </área_texto>
+    <capa_superpuesta>
+      <color_fondo>color_fondo</color_fondo>
+      <opacidad>opacidad</opacidad>
+    </capa_superpuesta>
+    <presentación tiempo_transición="nmtoken"/>
+    <botones alineación="left">
+      <posición>posición</posición>
+    </botones>
+  </visor>
+</visores>
