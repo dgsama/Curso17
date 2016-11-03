@@ -14,8 +14,10 @@ public class FileOutput implements Output {
 	}
 
 	public void send(char c) throws IOException {
-		char aux = codificar(c);
-		file.append(aux);
+		if (!normalize(c)) {
+			char aux = codificar(c);
+			file.append(aux);
+		}
 	}
 
 	public void close() throws IOException {
@@ -33,5 +35,12 @@ public class FileOutput implements Output {
 			}
 		}
 		return c;
+	}
+
+	public boolean normalize(char c) {
+		if (c == '\r') {
+			return true;
+		}
+		return false;
 	}
 }

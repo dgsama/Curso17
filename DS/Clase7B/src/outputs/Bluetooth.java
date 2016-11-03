@@ -13,7 +13,7 @@ public class Bluetooth implements Output {
 	}
 
 	public void send(char c) throws IOException {
-		if (!(c == ' ' && previous == ' ')) {
+		if (!espacioRepetido(c)) {
 			previous = c;
 			char aux = codificar(c);
 			stringWriter.append(aux);
@@ -35,5 +35,12 @@ public class Bluetooth implements Output {
 		} else {
 			return c;
 		}
+	}
+
+	public boolean espacioRepetido(char c) {
+		if (c == ' ' && previous == ' ') {
+			return true;
+		}
+		return false;
 	}
 }

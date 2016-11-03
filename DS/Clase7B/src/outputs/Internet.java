@@ -7,9 +7,15 @@ import outputs.*;
 public class Internet implements Output {
 
 	private boolean encrypt;
+	private boolean normalize;
+	private boolean spaces;
 
-	public Internet(String url, boolean encrypt) {
+	public Internet(String url, boolean encrypt, boolean normalize,
+			boolean spaces) {
 		this.encrypt = encrypt;
+		this.normalize = normalize;
+		this.spaces = spaces;
+
 		stringWriter = new StringWriter();
 		stringWriter.append("\n--- START Internet[" + url + "]\n");
 	}

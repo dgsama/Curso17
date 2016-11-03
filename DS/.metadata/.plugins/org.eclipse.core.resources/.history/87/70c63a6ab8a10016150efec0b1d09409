@@ -1,0 +1,34 @@
+package outputs;
+
+import java.io.*;
+
+import outputs.*;
+
+public class FileOutput implements Output {
+
+	private boolean encrypt;
+
+	public FileOutput(String fileName, boolean encrypt) throws IOException {
+		file = new FileWriter(fileName);
+		this.encrypt = encrypt;
+	}
+
+	public void send(char c) throws IOException {
+		if (c != '\r') {
+
+			char aux = codificar(c);
+			file.append(aux);
+		}
+	}
+
+	public void close() throws IOException {
+		file.close();
+	}
+
+	private FileWriter file;
+
+	@Override
+	public char codificar(char c) {
+		return c;
+	}
+}

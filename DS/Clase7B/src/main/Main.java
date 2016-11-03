@@ -12,8 +12,10 @@ public class Main {
 
 		system.copy("privado.txt", new FileOutput("a.txt", false));
 		system.copy("privado.txt", new FileOutput("b.txt", true));
-		system.copy("privado.txt", new Internet("1.1.1.1 sin encriptar", false));
-		system.copy("privado.txt", new Internet("1.1.1.1 encriptado", true));
+		system.copy("privado.txt", new Internet("1.1.1.1 sin encriptar", false,
+				true, true));
+		system.copy("privado.txt", new Internet("1.1.1.1 encriptado", true,
+				true, true));
 		system.copy("privado.txt", new Bluetooth("iPhone"));
 	}
 
