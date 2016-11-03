@@ -12,6 +12,7 @@ public class FileSystem {
 
 			int c;
 			while ((c = reader.read()) != -1)
+
 				output.send((char) c);
 
 			reader.close();
