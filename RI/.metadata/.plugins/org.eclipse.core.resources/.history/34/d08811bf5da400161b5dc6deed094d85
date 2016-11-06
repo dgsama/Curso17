@@ -1,0 +1,50 @@
+package uo.ri.ui.cash.action;
+
+import java.sql.*;
+
+import alb.util.console.Console;
+import alb.util.jdbc.Jdbc;
+import alb.util.menu.Action;
+import uo.ri.common.BusinessException;
+
+public class ReparacionesNoFacturadasUnClienteAction implements Action {
+
+	/**
+	 * Proceso:
+	 * 
+	 * - Pide el DNI del cliente
+	 * 
+	 * - Muestra en pantalla todas sus averias no facturadas (status <>
+	 * 'FACTURADA'). De cada avería muestra su id, fecha, status, importe y
+	 * descripción
+	 */
+
+	private static String consulta = "select a.id, a.fecha, a.status,a.importe, a.descripcion"
+			+ "from taverias a,tvehiculos v,tclientes c"
+			+ "where a.status<>'FACTURADA'  and  a.vehiculo_id=v.id and v.cliente_id=c.id and c.dni=?";
+
+	@Override
+	public void execute() throws BusinessException, SQLException {
+		Console.println("\nListado de averías no facturadas de un cliente\n");
+
+		// 332198006
+		Connection c = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+
+		// Pedir datos
+		String dni = Console.readString("Dni");
+		try {
+			c = Jdbc.getConnection();
+			pst = c.prepareStatement(SQL);
+			pst.setString(1, dni);
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			Jdbc.close(rs, pst, c);
+		}
+
+	}
+
+}
