@@ -5,18 +5,44 @@
 
 	<!-- 1. elemento raíz -->
 	<xs:element name="visores">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref = "defecto"/>
+                <xs:element ref = "visor" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
 	</xs:element>
 
     <!-- 2. elemento defecto -->
 	<xs:element name="defecto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref = "área_imagen"></xs:element>
+                <xs:element ref = "área_texto"></xs:element>
+                <xs:element ref = "capa_superpuesta"></xs:element>
+                <xs:element ref = "presentación"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
 	</xs:element>
 
     <!-- 3. tipo torden: entero entre -1 y +1
             (valores del atributo orden)     -->
-
+    <xs:simpleType name="torden">
+        <xs:restriction base = "xs:integer">
+            <xs:minInclusive value="-1"/>
+            <xs:maxInclusive value="1"/>
+        </xs:restriction>
+    </xs:simpleType>
 		  
     <!-- 4. tipo tcolor
-            Cadena: 'transparent' o RGB en formato hexadecimal -->
+            Cadena: 'transparent' o RGB en formato hexadecimal 
+			(siempre que se requiera utilizar un color CSS)    -->
+            
+    <xs:simpleType name="tcolor">
+        <xs:restriction base = "xs:string">
+            <xs:pattern value="transparent|#[0-9A-Fa-f]{6}"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 			
 	<!-- elemento color_fondo -->
@@ -24,6 +50,14 @@
 
     <!-- 5. elemento área_imagen -->
 	<xs:element name="área_imagen">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref = "ancho_imagen"/>
+                <xs:element ref = "color_fondo"/>
+                <xs:element ref = "relleno_imagen" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name = "orden" type = "torden" use = "required"/>
+        </xs:complexType>
 	</xs:element>
 
 	
@@ -38,11 +72,30 @@
 	</xs:element>
 
     <!-- 6. tipo tancho: entero entre 100 y 800 
-         (contenido del elemento ancho_imagen) -->   
+           (contenido del elemento ancho_imagen) --> 
+    <xs:simpleType name="tancho">
+        <xs:restriction base = "xs:integer">
+            <xs:minInclusive value="100"/>
+            <xs:maxInclusive value="800"/>
+        </xs:restriction>
+    </xs:simpleType>  
  
  
     <!-- 7. elemento ancho_imagen -->
 	<xs:element name="ancho_imagen">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="tancho">
+                    <xs:attribute name = "relación" use = "required">
+                        <xs:simpleType>
+                            <xs:restriction base = "xs:string">
+                                <xs:pattern value="4:3|16:9"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
 	</xs:element>
 
 	
@@ -63,11 +116,30 @@
 	</xs:element>
 
     <!-- 8. tipo talineación
+            Cadena: left, center o right
             (valores del atributo alineación) -->
+    <xs:simpleType name="talineación">
+        <xs:restriction base = "xs:string">
+            <xs:pattern value="center|left|right"/>
+        </xs:restriction>
+    </xs:simpleType>
 
 			
     <!-- 9. elemento texto -->
 	<xs:element name="texto">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref = "descripción"/>
+            </xs:sequence>
+            <xs:attribute name = "tipo" use="required">
+                <xs:simpleType>
+                    <xs:restriction base = "xs:string">
+                        <xs:pattern value="título|relación_aspecto"></xs:pattern>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name = "alineación" type = "talineación" use = "required"/>
+        </xs:complexType>
 	</xs:element>
 	
 	
@@ -95,24 +167,72 @@
     
     <!-- 10. elemento capa_superpuesta -->
 	<xs:element name="capa_superpuesta">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref = "color_fondo"/>
+                <xs:element ref = "opacidad"/>
+            </xs:sequence>
+        </xs:complexType>
 	</xs:element>
 
 	
     <!-- elemento opacidad -->
 	<xs:element name="opacidad" type="topacidad"/>
 	
-    <!-- 11. elemento presentación -->
+    <!-- 11. elemento presentación
+			 El valor de su atributo tiempo_transición es
+			 un entero entre 100 y 10000				 -->
 	<xs:element name="presentación">
+        <xs:complexType>
+            <xs:attribute name = "tiempo_transición" use="required">
+                <xs:simpleType>
+                    <xs:restriction base = "xs:integer">
+                        <xs:minInclusive value="100"/>
+                        <xs:maxInclusive value="10000"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
 	</xs:element>
 
-    <!-- 12. elemento visor -->
+    <!-- 12. elemento visor
+		     El valor de su atributo nombre es la cadena visor_xx, donde 
+			 xx son dos dígitos.
+			 El valor de su atributo borde es una cadena que especifica el
+			 ancho en pixels (0 a 9), el tipo de borde (solid, double, inset,
+			 outset o groove y el color RGB en hexadecimal.					  -->
 	<xs:element name="visor">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref = "tema"/>
+                <xs:element ref = "área_imagen" minOccurs="0"/>
+                <xs:element ref = "área_texto" minOccurs="0"/>
+                <xs:element ref = "capa_superpuesta" minOccurs="0"/>
+                <xs:element ref = "presentación" minOccurs="0"/>
+                <xs:element ref = "botones" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name = "nombre" use = "required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:ID">
+                        <xs:pattern value="visor_[0-9]{2}"></xs:pattern>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name = "borde" use = "optional">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="0|[0-9]px (solid|dashed) #[0-9A-Fa-f]{6}"></xs:pattern>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
 	</xs:element>
 
-    <!-- tipo t_tema
+    <!-- tipo t_tema.
          (contenido del elemento tema) -->	
 	<xs:simpleType name="t_tema">
 	   <xs:restriction base="xs:string">
+           <xs:enumeration value="16x9"/>
            <xs:enumeration value="animales"/>
            <xs:enumeration value="aviones"/>
            <xs:enumeration value="castillos"/>
@@ -123,8 +243,24 @@
 	</xs:simpleType>
 
 	
-	<!-- 13. elemento tema -->
+	<!-- 13. elemento tema. Su contenido debe ser
+			 de tipo t_tema 
+			El valor de su atributo número es un entero entre 10 y 30 -->
 	<xs:element name="tema">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base = "t_tema">
+                    <xs:attribute name = "número" default="30">
+                        <xs:simpleType>
+                            <xs:restriction base = "xs:integer">
+                                <xs:minInclusive value="10"/>
+                                <xs:maxInclusive value="30"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
 	</xs:element>
 
     <!-- elemento botones -->
