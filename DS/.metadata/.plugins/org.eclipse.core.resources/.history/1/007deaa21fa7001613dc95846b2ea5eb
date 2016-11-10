@@ -1,0 +1,29 @@
+package outputs;
+
+import java.io.IOException;
+import java.io.StringWriter;
+
+import decorators.Decorator;
+
+public class Internet implements Output {
+
+	private Decorator decorator;
+
+	public Internet(String url, Decorator decorator) {
+		this.decorator = decorator;
+		stringWriter = new StringWriter();
+		stringWriter.append("\n--- START Internet[" + url + "]\n");
+	}
+
+	public void send(char c) throws IOException {
+		char aux = c;
+		stringWriter.append(aux);
+	}
+
+	public void close() throws IOException {
+		System.out.print(stringWriter.toString());
+		System.out.println("--- END   Internet");
+	}
+
+	private StringWriter stringWriter = new StringWriter();
+}

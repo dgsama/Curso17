@@ -1,0 +1,24 @@
+package decorators;
+
+public class Encrypter extends AbstractDecorator {
+
+	private
+
+	public Encrypter(Decorator decorator, String mensaje) {
+		super(decorator, mensaje);
+	}
+
+	@Override
+	public void Format(char c) {
+
+		for (char c : mensaje) {
+			if (Character.isLetter(c) || Character.isDigit(c)) {
+				int value = c;
+				return (char) (c + 1);
+
+			}
+		}
+
+	}
+
+}

@@ -1,46 +1,31 @@
 package outputs;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.StringWriter;
 
-import outputs.*;
+import decorators.Decorator;
 
 public class Internet implements Output {
 
-	private boolean encrypt;
-	private boolean normalize;
-	private boolean spaces;
+	private Decorator decorator;
 
-	public Internet(String url, boolean encrypt, boolean normalize,
-			boolean spaces) {
-		this.encrypt = encrypt;
-		this.normalize = normalize;
-		this.spaces = spaces;
-
+	public Internet(String url, Decorator decorator) {
+		this.decorator = decorator;
 		stringWriter = new StringWriter();
 		stringWriter.append("\n--- START Internet[" + url + "]\n");
 	}
 
 	public void send(char c) throws IOException {
-		char aux = codificar(c);
+		char aux = c;
 		stringWriter.append(aux);
 	}
 
 	public void close() throws IOException {
-		System.out.print(stringWriter.toString());
+		String aux = stringWriter.toString();
+		decorator.format(aux);
+		System.out.print(aux);
 		System.out.println("--- END   Internet");
 	}
 
 	private StringWriter stringWriter = new StringWriter();
-
-	@Override
-	public char codificar(char c) {
-		if (encrypt == true) {
-			if (Character.isLetter(c) || Character.isDigit(c)) {
-				int value = c;
-				return (char) (c + 1);
-			}
-		}
-		return c;
-
-	}
 }

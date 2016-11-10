@@ -1,0 +1,15 @@
+package decorators;
+
+public class Normalizer extends AbstractDecorator {
+
+	public Normalizer(Decorator decorator, String mensaje) {
+		super(decorator, mensaje);
+	}
+
+	@Override
+	public void Execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -2,6 +2,11 @@ package main;
 
 import java.io.*;
 
+import javax.xml.bind.annotation.adapters.NormalizedStringAdapter;
+
+import decorators.Encrypter;
+import decorators.Normalizer;
+import decorators.Spaces;
 import outputs.*;
 
 public class Main {
@@ -10,13 +15,9 @@ public class Main {
 
 		FileSystem system = new FileSystem();
 
-		system.copy("privado.txt", new FileOutput("a.txt", false));
-		system.copy("privado.txt", new FileOutput("b.txt", true));
-		system.copy("privado.txt", new Internet("1.1.1.1 sin encriptar", false,
-				true, true));
-		system.copy("privado.txt", new Internet("1.1.1.1 encriptado", true,
-				true, true));
-		system.copy("privado.txt", new Bluetooth("iPhone"));
+		system.copy("privado.txt", new FileOutput("a.txt", new Spaces(new Normalizer(new Encrypter(null)))));
+		system.copy("privado.txt", new Internet("1.1.1.1", new Spaces(new Normalizer(new Encrypter(null)))));
+		system.copy("privado.txt", new Bluetooth("iPhone", new Spaces(new Normalizer(new Encrypter(null)))));
 	}
 
 }

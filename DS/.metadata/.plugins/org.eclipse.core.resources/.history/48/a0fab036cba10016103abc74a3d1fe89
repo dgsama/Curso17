@@ -1,0 +1,23 @@
+package decorators;
+
+public class Encrypter extends AbstractDecorator {
+
+	
+
+	public Encrypter(Decorator decorator) {
+		super(decorator);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public char format(char c) {
+			if (Character.isLetter(c) || Character.isDigit(c)) {
+				int value = c;
+				return (char) (c + 1);
+
+			}
+		}
+
+	}
+
+}

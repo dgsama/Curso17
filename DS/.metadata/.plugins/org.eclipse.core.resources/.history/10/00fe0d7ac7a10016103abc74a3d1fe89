@@ -1,0 +1,10 @@
+package decorators;
+
+public class Spaces implements Decorator {
+
+	@Override
+	public void Execute() {
+
+	}
+
+}

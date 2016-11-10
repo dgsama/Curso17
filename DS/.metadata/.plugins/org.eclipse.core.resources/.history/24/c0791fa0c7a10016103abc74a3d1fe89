@@ -1,0 +1,7 @@
+package decorators;
+
+public class AbstractDecorator implements Decorator {
+	
+	
+
+}

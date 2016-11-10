@@ -1,0 +1,24 @@
+package decorators;
+
+public class Spaces extends AbstractDecorator{
+	
+	
+	
+	public Spaces(Decorator decorator) {
+		super(decorator);
+	}
+	
+	@Override
+	public void Execute(char c) {
+	}
+	
+
+
+	public boolean espacioRepetido(char c) {
+		if (c == ' ' && previous == ' ') {
+			return true;
+		}
+		return false;
+	}
+
+}

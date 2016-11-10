@@ -1,0 +1,23 @@
+package decorators;
+
+public class Spaces extends AbstractDecorator{
+	
+	private static final char previous = 0;
+	private Decorator decorator;
+
+	public Spaces(Decorator decorator) {
+		super(decorator);
+	}
+	
+	@Override
+	public char format(char c) {
+		 char aux = c;		
+		if(decorator != null){
+			if (aux == ' ' && previous == ' ') {
+				return null;
+			}			
+		}
+		return aux;
+	}
+
+}

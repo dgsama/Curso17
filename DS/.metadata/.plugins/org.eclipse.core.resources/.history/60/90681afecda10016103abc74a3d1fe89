@@ -1,0 +1,7 @@
+package decorators;
+
+public interface Decorator {
+
+	String format(String str);
+	String format(String str)
+}

@@ -1,0 +1,11 @@
+package decorators;
+
+public class Encrypter implements Decorator{
+
+	@Override
+	public void Execute() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+package decorators;
+
+public class Encrypter extends AbstractDecorator{
+
+	public Encrypter(Decorator decorator) {
+		super(decorator);
+	}
+
+	@Override
+	public void Execute() {
+		
+	char c;
+			if (Character.isLetter(c) || Character.isDigit(c)) {
+				int value = c;
+				return (char) (c + 1);
+
+			}
+			return c;
+
+		}
+		
+	}
+}

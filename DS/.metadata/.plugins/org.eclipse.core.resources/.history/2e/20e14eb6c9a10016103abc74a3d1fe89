@@ -1,0 +1,6 @@
+package decorators;
+
+public interface Decorator {
+
+	void Execute();
+}

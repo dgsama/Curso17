@@ -1,0 +1,14 @@
+package decorators;
+
+public class Encrypter extends AbstractDecorator{
+
+	public Encrypter(Decorator decorator) {
+		super(decorator);
+	}
+
+	@Override
+	public void Execute() {
+		
+		
+	}
+}

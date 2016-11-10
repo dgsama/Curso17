@@ -2,45 +2,31 @@ package outputs;
 
 import java.io.*;
 
+import decorators.Decorator;
 import outputs.*;
 
 public class FileOutput implements Output {
 
-	private boolean encrypt;
+	private String mensaje;
+	private Decorator decorator;
 
-	public FileOutput(String fileName, boolean encrypt) throws IOException {
+	public FileOutput(String fileName, Decorator decorator) throws IOException {
+		this.decorator = decorator;
 		file = new FileWriter(fileName);
-		this.encrypt = encrypt;
 	}
 
 	public void send(char c) throws IOException {
-		if (!normalize(c)) {
-			char aux = codificar(c);
-			file.append(aux);
-		}
+		mensaje += c;
 	}
 
 	public void close() throws IOException {
+		decorator.format(mensaje);
+		for (char c : mensaje.toCharArray()) {
+			file.append(c);
+		}
 		file.close();
 	}
 
 	private FileWriter file;
 
-	@Override
-	public char codificar(char c) {
-		if (encrypt == true) {
-			if (Character.isLetter(c) || Character.isDigit(c)) {
-				int value = c;
-				return (char) (c + 1);
-			}
-		}
-		return c;
-	}
-
-	public boolean normalize(char c) {
-		if (c == '\r') {
-			return true;
-		}
-		return false;
-	}
 }

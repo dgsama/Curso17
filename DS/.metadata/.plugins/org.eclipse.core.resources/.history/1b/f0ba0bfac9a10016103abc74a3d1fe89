@@ -1,0 +1,6 @@
+package decorators;
+
+public interface Decorator {
+
+	char Format(char c);
+}

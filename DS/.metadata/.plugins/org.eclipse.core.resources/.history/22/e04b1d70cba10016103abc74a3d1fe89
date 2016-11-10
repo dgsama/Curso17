@@ -1,0 +1,11 @@
+package decorators;
+
+public abstract class AbstractDecorator implements Decorator {
+
+	protected Decorator decorator;
+
+	public AbstractDecorator(Decorator decorator) {
+		this.decorator = decorator;
+	}
+
+}

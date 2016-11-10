@@ -1,0 +1,18 @@
+package decorators;
+
+public class AbstractDecorator implements Decorator {
+
+	private Decorator decorator;
+	
+	public AbstractDecorator(Decorator decorator) {
+		this.decorator=decorator;
+	}
+	
+	@Override
+	public void Execute() {
+	
+	}
+	
+	
+
+}

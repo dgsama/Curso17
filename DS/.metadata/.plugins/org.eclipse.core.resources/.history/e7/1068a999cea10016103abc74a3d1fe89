@@ -1,0 +1,28 @@
+package decorators;
+
+public class Encrypter extends AbstractDecorator {
+
+	public Encrypter(Decorator decorator) {
+		super(decorator);
+
+	}
+
+	@Override
+	public char format(char c) {
+		char aux = c;
+		if (decorator != null) {
+			if (Character.isLetter(c) || Character.isDigit(c)) {
+				int value = c;
+				return (char) (c + 1);
+
+			}
+		}
+		return aux;
+	}
+
+	@Override
+	public String format2(String str) {
+		char[] chars = str.toCharArray();
+	}
+
+}

@@ -1,0 +1,39 @@
+package outputs;
+
+import java.io.*;
+
+import outputs.*;
+
+public class FileOutput implements Output {
+
+	public FileOutput(String fileName) throws IOException {
+		file = new FileWriter(fileName);
+	}
+
+	public void send(char c) throws IOException {
+			file.append(c);
+		}
+	}
+
+	public void close() throws IOException {
+		file.close();
+	}
+
+	private FileWriter file;
+
+	public char codificar(char c) {
+		if (Character.isLetter(c) || Character.isDigit(c)) {
+			int value = c;
+			return (char) (c + 1);
+		}
+
+		return c;
+	}
+
+	public boolean normalize(char c) {
+		if (c == '\r') {
+			return true;
+		}
+		return false;
+	}
+}

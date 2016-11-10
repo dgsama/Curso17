@@ -1,0 +1,20 @@
+package decorators;
+
+public class Normalizer extends AbstractDecorator {
+
+	public Normalizer(Decorator decorator) {
+		super(decorator);
+	}
+
+	@Override
+	public char format(char c) {
+		char aux = c;
+		if (decorator != null) {
+			if (aux == '\r') {
+				return 0;
+			}
+		}
+		return aux;
+	}
+
+}

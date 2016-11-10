@@ -1,0 +1,20 @@
+package decorators;
+
+public class Normalizer extends AbstractDecorator {
+
+
+	public Normalizer(Decorator decorator) {
+		super(decorator);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	@Override
+	public char format(char c) {
+		if (c == '\r') {
+			return 0;
+		}
+		return false;
+	}
+
+}

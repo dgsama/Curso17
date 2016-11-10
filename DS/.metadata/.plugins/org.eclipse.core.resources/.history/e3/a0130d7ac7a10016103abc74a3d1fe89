@@ -1,0 +1,10 @@
+package decorators;
+
+public class Normalizer implements Decorator {
+
+	@Override
+	public void Execute() {
+
+	}
+
+}
