@@ -6,7 +6,6 @@ public class Normalizer extends AbstractDecorator {
 		super(decorator);
 	}
 
-
 	@Override
 	public String format2(String str) {
 		String aux = "";

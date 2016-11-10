@@ -1,11 +1,24 @@
 package encuesta;
+
+import java.util.ArrayList;
+import java.util.Base64;
+
+import actualizar.Actualizar;
+import actualizar.BaseDeDatos;
+
 public class Encuesta {
 
 	private int si, no;
 	private String pregunta;
+	private ArrayList<Actualizar> actualizaciones;
+	private BaseDeDatos bd;
 
-	public Encuesta(String pregunta) {
+	public Encuesta(String pregunta, Actualizar... listaAct) {
 		this.pregunta = pregunta;
+		actualizaciones.add(bd);
+		for (Actualizar a : listaAct) {
+			actualizaciones.add(a);
+		}
 	}
 
 	public String getPregunta() {
@@ -22,30 +35,10 @@ public class Encuesta {
 
 	public void incrementaSi() {
 		si++;
-		actualizaGráficoCircular();
-		actualizaGráficoBarras();
-		guardaResultados();
 	}
 
 	public void incrementaNo() {
 		no++;
-		actualizaGráficoCircular();
-		actualizaGráficoBarras();
-		guardaResultados();
-	}
-
-
-	// Parte de representar los datos
-	private void actualizaGráficoCircular() {
-		System.out.println("Dibujando gráfico circular");
-	}
-
-	private void actualizaGráficoBarras() {
-		System.out.println("Dibujando gráfico de barras");
-	}
-
-	private void guardaResultados() {
-		System.out.println("Guardando resultados");
 	}
 
 }

@@ -1,0 +1,11 @@
+package actualizar;
+
+public class GraficoBarras implements Actualizar {
+
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

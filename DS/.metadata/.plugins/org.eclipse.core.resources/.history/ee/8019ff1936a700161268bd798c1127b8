@@ -1,0 +1,42 @@
+package encuesta;
+
+public class Encuesta {
+
+	private int si, no;
+	private String pregunta;
+	private Grafico grafico;
+
+	public Encuesta(String pregunta) {
+		this.pregunta = pregunta;
+		grafico = new Grafico();
+	}
+
+	public String getPregunta() {
+		return pregunta;
+	}
+
+	public int getVotosSi() {
+		return si;
+	}
+
+	public int getVotosNo() {
+		return no;
+	}
+
+	public void incrementaSi() {
+		si++;
+		actualizar();
+	}
+
+	public void incrementaNo() {
+		no++;
+		actualizar();
+	}
+
+	private void actualizar() {
+		grafico.actualizaGráficoCircular();
+		grafico.actualizaGráficoBarras();
+		grafico.guardaResultados();
+	}
+
+}

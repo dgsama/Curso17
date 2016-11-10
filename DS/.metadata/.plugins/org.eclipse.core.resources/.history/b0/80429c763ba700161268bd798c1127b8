@@ -1,0 +1,14 @@
+package actualizar;
+
+public class LineaDeEstado implements Actualizar {
+
+	@Override
+	public void execute() {
+		mostrarInfo(i, j);
+
+	}
+
+	private void mostrarInfo(int i, int j) {
+		System.out.println("si: " + i + " no: " + j);
+	}
+}

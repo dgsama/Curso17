@@ -1,0 +1,7 @@
+package encuesta;
+
+public class Grafico {
+	
+	public Grafico() {
+	}
+}

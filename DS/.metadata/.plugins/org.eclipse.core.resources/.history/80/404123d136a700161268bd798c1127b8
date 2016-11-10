@@ -1,0 +1,19 @@
+package encuesta;
+
+public class Grafico {
+
+	public Grafico() {
+	}
+
+	protected void actualizaGráficoCircular() {
+		System.out.println("Dibujando gráfico circular");
+	}
+
+	protected void actualizaGráficoBarras() {
+		System.out.println("Dibujando gráfico de barras");
+	}
+
+	protected void mostrarInfo(int i, int j) {
+		System.out.println("si: " + i + " no: " + j);
+	}
+}

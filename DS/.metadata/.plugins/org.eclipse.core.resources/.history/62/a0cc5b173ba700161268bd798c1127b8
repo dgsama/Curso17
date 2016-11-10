@@ -1,0 +1,15 @@
+package actualizar;
+
+public class GraficoBarras implements Actualizar {
+
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+
+	}
+	
+	private void actualizaGráficoBarras() {
+		System.out.println("Dibujando gráfico de barras");
+	}
+
+}
