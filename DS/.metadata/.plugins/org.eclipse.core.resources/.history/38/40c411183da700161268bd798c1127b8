@@ -35,15 +35,13 @@ public class Encuesta {
 
 	public void incrementaSi() {
 		si++;
-		avisar();
 	}
 
 	public void incrementaNo() {
 		no++;
-		avisar();
 	}
 
-	private void avisar() {
+	private void observar() {
 		for (Actualizar act : actualizaciones) {
 			act.execute();
 		}
