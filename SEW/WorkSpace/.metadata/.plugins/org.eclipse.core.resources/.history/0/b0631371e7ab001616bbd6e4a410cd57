@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE alumno SYSTEM "matricula.dtd" >
+<alumnos>
+    <alumno  matricula="zz1387">
+        <datos>
+            <nombre>
+                <nombre_pila>Luis</nombre_pila>
+                <apellidos>Rodríguez Fernández</apellidos>
+            </nombre>
+            <email>UO12345@uniovi.es</email>
+            <telefono>636000111</telefono>
+            <fecha_nac anio="1992" dia="02" mes="03" />
+            <domicilio>
+                <calle numero="6" piso="2ºC">Balmes</calle>
+                <localidad>Oviedo</localidad>
+                <provincia>Asturias</provincia>
+                <cod_postal>330119</cod_postal>
+            </domicilio>
+            <sexo tipo="H" />
+        </datos>
+        <titulacion cod_titulacion="GINIS-01">
+            <n_titulacion>
+                Grado en Ingeniería en
+                Informática del Software
+            </n_titulacion>
+            <asignatura cod_asignatura="GINIS-003" tipo="basica">
+                <n_asignatura>
+                    Fundamentos de Informática
+                </n_asignatura>
+                <curso>1</curso>
+                <creditos>6</creditos>
+            </asignatura>
+            <asignatura cod_asignatura="GINIS-010" tipo="obligatoria">
+                <n_asignatura>
+                    Estructuras de Datos
+                </n_asignatura>
+                <curso>2</curso>
+                <creditos>6</creditos>
+            </asignatura>
+        </titulacion>
+    </alumno>
+    <alumno  matricula="zz3387">
+        <datos>
+            <nombre>
+                <nombre_pila>Rosa</nombre_pila>
+                <apellidos>Rodríguez Castro</apellidos>
+            </nombre>
+            <email>UO1277@uniovi.es</email>
+            <telefono>636333111</telefono>
+            <fecha_nac anio="1990" dia="25" mes="07" />
+            <domicilio>
+                <calle numero="16" piso="8ºC">Ramiro I</calle>
+                <localidad>Oviedo</localidad>
+                <provincia>Asturias</provincia>
+                <cod_postal>330119</cod_postal>
+            </domicilio>
+            <sexo tipo="M" />
+        </datos>
+        <titulacion cod_titulacion="GINIS-22">
+            <n_titulacion>
+                Grado en Ingeniería en
+                Informática del Software
+            </n_titulacion>
+            <asignatura cod_asignatura="GINIS-113" tipo="basica">
+                <n_asignatura>
+                    Fundamentos de Informática
+                </n_asignatura>
+                <curso>1</curso>
+                <creditos>6</creditos>
+            </asignatura>
+        </titulacion>
+        <titulacion cod_titulacion="GINITI-01">
+            <n_titulacion>
+                Grado en Ingeniería en Informática en Tecnologías de la Información
+            </n_titulacion>
+            <asignatura cod_asignatura="GIITI-002" tipo="basica">
+                <n_asignatura>
+                    Metodología de la Programación
+                </n_asignatura>
+                <curso>1</curso>
+                <creditos>6</creditos>
+            </asignatura>
+            <asignatura cod_asignatura="GIITI-010" tipo="obligatoria">
+                <n_asignatura>
+                    Estructuras de Datos
+                </n_asignatura>
+                <curso>2</curso>
+                <creditos>6</creditos>
+            </asignatura>
+        </titulacion>
+    </alumno>
+    <alumno  matricula="zz1399">
+        <datos>
+            <nombre>
+                <nombre_pila>Ana</nombre_pila>
+                <apellidos>Cerezo Ribera</apellidos>
+            </nombre>
+            <email>UO321@uniovi.es</email>
+            <telefono>636123111</telefono>
+            <fecha_nac anio="1992" dia="21" mes="07" />
+            <domicilio>
+                <calle numero="23" piso="5ºD">Cifuentes</calle>
+                <localidad>Gijón</localidad>
+                <provincia>Asturias</provincia>
+                <cod_postal>330119</cod_postal>
+            </domicilio>
+            <sexo tipo="M" />
+        </datos>
+        <titulacion cod_titulacion="GINIS-02">
+            <n_titulacion>
+                Grado en Ingeniería en
+                Informática del Software
+            </n_titulacion>
+            <asignatura cod_asignatura="GINIS-013" tipo="basica">
+                <n_asignatura>
+                    Álgebra
+                </n_asignatura>
+                <curso>1</curso>
+                <creditos>6</creditos>
+            </asignatura>
+            <asignatura cod_asignatura="GINIS-011" tipo="obligatoria">
+                <n_asignatura>
+                    Estructuras de Datos
+                </n_asignatura>
+                <curso>2</curso>
+                <creditos>6</creditos>
+            </asignatura>
+        </titulacion>
+    </alumno>
+</alumnos>

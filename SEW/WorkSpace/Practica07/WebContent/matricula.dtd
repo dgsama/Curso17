@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT alumnos (alumno+)>
+<!ELEMENT alumno (datos, titulacion+)>
+<!ATTLIST alumno matricula ID #REQUIRED>
+<!-- Datos del alumno -->
+<!ELEMENT datos (nombre, email+, telefono+, fecha_nac, domicilio?, sexo)>
+<!ELEMENT nombre (nombre_pila, apellidos)>
+<!ELEMENT nombre_pila (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT fecha_nac EMPTY>
+<!ATTLIST fecha_nac
+  dia NMTOKEN #REQUIRED
+  mes NMTOKEN #REQUIRED
+  anio NMTOKEN #REQUIRED>
+<!ELEMENT domicilio (calle, localidad, provincia, cod_postal)>
+<!ELEMENT calle (#PCDATA)>
+<!ATTLIST calle
+  numero NMTOKEN #REQUIRED
+  piso CDATA #REQUIRED
+  escalera NMTOKEN #IMPLIED
+  bloque NMTOKEN #IMPLIED>
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT cod_postal (#PCDATA)>
+<!ELEMENT sexo EMPTY>
+<!ATTLIST sexo tipo (M | H) #REQUIRED>
+<!-- Titulación -->
+<!ELEMENT titulacion (n_titulacion, asignatura+)>
+<!ATTLIST titulacion cod_titulacion ID #REQUIRED>
+<!ELEMENT n_titulacion (#PCDATA)>
+<!-- Asignaturas -->
+<!ELEMENT asignatura (n_asignatura, curso, creditos)>
+<!ATTLIST asignatura
+  cod_asignatura ID #REQUIRED
+  tipo (basica | obligatoria | optativa) #REQUIRED>
+<!ELEMENT n_asignatura (#PCDATA)>
+<!ELEMENT curso (#PCDATA)>
+<!ELEMENT creditos (#PCDATA)>
