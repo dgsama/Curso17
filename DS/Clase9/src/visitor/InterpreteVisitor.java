@@ -1,6 +1,10 @@
 package visitor;
 
-import java.io.Console;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 import nodos.Asignacion;
 import nodos.ConstanteInt;
@@ -15,6 +19,12 @@ import nodos.Variable;
 
 public class InterpreteVisitor implements Visitor {
 
+	private Map<String, Object> baseDatos;
+
+	public InterpreteVisitor() {
+		baseDatos = new HashMap<String, Object>();
+	}
+
 	@Override
 	public Object visit(Asignacion asign, Object param) {
 		// TODO Auto-generated method stub
@@ -23,8 +33,8 @@ public class InterpreteVisitor implements Visitor {
 
 	@Override
 	public Object visit(ConstanteInt cosInt, Object param) {
-		System.out.print(cosInt.valor);
-		return null;
+		// System.out.print(cosInt.valor);
+		return Integer.parseInt(cosInt.valor);
 	}
 
 	@Override
@@ -35,7 +45,7 @@ public class InterpreteVisitor implements Visitor {
 
 	@Override
 	public Object visit(Print p, Object param) {
-		// TODO Auto-generated method stub
+		System.out.println(p.expr.accept(this, param));
 		return null;
 	}
 
@@ -55,22 +65,33 @@ public class InterpreteVisitor implements Visitor {
 
 	@Override
 	public Object visit(Read read, Object param) {
-		System.out.print("Introduce el valor de --> ");
-		read.var.accept(this, null);
+		System.out.print("Introduce el valor de --> "+ read.var.name);
+		System.out.print("\n--> ");
+		try {
+			baseDatos.put(read.var.name, readInt());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		System.out.println();
 		return null;
 	}
 
 	@Override
 	public Object visit(Suma sum, Object param) {
-		// TODO Auto-generated method stub
-		return null;
+		return (int) sum.left.accept(this, null) + (int) sum.right.accept(this, null);
 	}
 
 	@Override
 	public Object visit(Variable var, Object param) {
-		System.out.print(var.name);
-		return null;
+		// System.out.print(var.name);
+		return baseDatos.get(var.name);
+	}
+
+	private int readInt() throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		
+		return Integer.valueOf(bf.readLine());
+
 	}
 
 }

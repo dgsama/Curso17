@@ -1,0 +1,97 @@
+package visitor;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
+
+import nodos.Asignacion;
+import nodos.ConstanteInt;
+import nodos.Division;
+import nodos.Print;
+import nodos.Producto;
+import nodos.Programa;
+import nodos.Read;
+import nodos.Sentencia;
+import nodos.Suma;
+import nodos.Variable;
+
+public class InterpreteVisitor implements Visitor {
+
+	private Map<String, Object> baseDatos;
+
+	public InterpreteVisitor() {
+		baseDatos = new HashMap<String, Object>();
+	}
+
+	@Override
+	public Object visit(Asignacion asign, Object param) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit(ConstanteInt cosInt, Object param) {
+		System.out.print(cosInt.valor);
+		return null;
+	}
+
+	@Override
+	public Object visit(Division div, Object param) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit(Print p, Object param) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit(Producto prod, Object param) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object visit(Programa prog, Object param) {
+		for (Sentencia sentencia : prog.sentencias) {
+			sentencia.accept(this, null);
+		}
+		return null;
+	}
+
+	@Override
+	public Object visit(Read read, Object param) {
+		System.out.print("Introduce el valor de --> ");
+		read.var.accept(this, null);
+		System.out.print("\n--> ");
+		try {
+			baseDatos.put(read.var.name, readInt());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println();
+		return null;
+	}
+
+	@Override
+	public Object visit(Suma sum, Object param) {
+		return (int)sum.left.accept(this, null) + (int)sum.right.accept(this, null);
+	}
+
+	@Override
+	public Object visit(Variable var, Object param) {
+		// System.out.print(var.name);
+		return baseDatos.get(var.name);
+	}
+
+	private int readInt() throws IOException {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+		return bf.read();
+
+	}
+
+}

@@ -10,7 +10,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// 1. Construir árbol ---------------------------------------------
+		// 1. Construir ï¿½rbol ---------------------------------------------
 
 		/*
 		 * read ancho; read alto; area = alto * ancho / 2; print area + 10;
@@ -25,20 +25,25 @@ public class Main {
 		sentencias.add(new Read(new Variable("alto")));
 
 		// area = alto * ancho / 2;
-		Producto prod = new Producto(new Variable("alto"),
-				new Variable("ancho"));
-		sentencias.add(new Asignacion(new Variable("area"), new Division(prod,
-				new ConstanteInt("2"))));
+		Producto prod = new Producto(new Variable("alto"), new Variable("ancho"));
+		sentencias.add(new Asignacion(new Variable("area"), new Division(prod, new ConstanteInt("2"))));
 
 		// print area + 10;
-		sentencias.add(new Print(new Suma(new Variable("area"),
-				new ConstanteInt("10"))));
+		sentencias.add(new Print(new Suma(new Variable("area"), new ConstanteInt("10"))));
 
 		// Crear el nodo raiz
 		Programa prog = new Programa(sentencias);
 
-		// 2. Recorrer árbol ---------------------------------------------
-		System.out.println("\n--- Recorrido Recursivo: todo en un método");
+		// PROGRAMA SUMA
+		List<Sentencia> suma = new ArrayList<Sentencia>();
+		suma.add(new Read(new Variable("a")));
+		suma.add(new Read(new Variable("b")));
+		suma.add(new Print(new Suma(new Variable("a"), new Variable("a"))));
+
+		Programa p = new Programa(suma);
+
+		// 2. Recorrer ï¿½rbol ---------------------------------------------
+		System.out.println("\n--- Recorrido Recursivo: todo en un mï¿½todo");
 		RecorridoRecursivo rr = new RecorridoRecursivo();
 		// rr.visit(prog);
 
@@ -55,7 +60,7 @@ public class Main {
 		// Crear interprete
 		System.out.println("\n--- Recorrido con Visitor: interprete");
 		InterpreteVisitor interprete = new InterpreteVisitor();
-		prog.accept(interprete, null);
+		p.accept(interprete, null);
 
 	}
 }

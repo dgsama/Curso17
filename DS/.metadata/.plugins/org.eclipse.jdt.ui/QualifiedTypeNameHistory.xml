@@ -21,11 +21,18 @@
 <fullyQualifiedTypeName name="decorators.Decorator"/>
 <fullyQualifiedTypeName name="actualizadores.BaseDeDatos"/>
 <fullyQualifiedTypeName name="actualizadores.Actualizar"/>
-<fullyQualifiedTypeName name="nodos.ConstanteInt"/>
 <fullyQualifiedTypeName name="nodos.Asignacion"/>
 <fullyQualifiedTypeName name="nodos.Sentencia"/>
 <fullyQualifiedTypeName name="visitor.Visitor"/>
 <fullyQualifiedTypeName name="java.io.Console"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="visitor.InterpreteVisitor"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="javax.print.attribute.HashAttributeSet"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="nodos.Suma"/>
+<fullyQualifiedTypeName name="nodos.ConstanteInt"/>
+<fullyQualifiedTypeName name="nodos.Print"/>
 </qualifiedTypeNameHistroy>
