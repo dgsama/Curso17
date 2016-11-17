@@ -14,4 +14,9 @@
 <fullyQualifiedTypeName name="editor.Dibujo"/>
 <fullyQualifiedTypeName name="cambios.Cambio"/>
 <fullyQualifiedTypeName name="Historial.Historial"/>
+<fullyQualifiedTypeName name="decorators.Spaces"/>
+<fullyQualifiedTypeName name="javax.xml.bind.annotation.adapters.NormalizedStringAdapter"/>
+<fullyQualifiedTypeName name="decorators.Normalizer"/>
+<fullyQualifiedTypeName name="decorators.Encrypter"/>
+<fullyQualifiedTypeName name="decorators.Decorator"/>
 </qualifiedTypeNameHistroy>

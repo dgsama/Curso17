@@ -1,5 +1,0 @@
-package Historial;
-
-public interface Cambio {
-
-}
