@@ -1,0 +1,14 @@
+package uo.ri.business.admin;
+
+import java.util.Map;
+
+public class DeleteMechanic {
+
+	private static String SQL = "delete from TMecanicos where id = ?";
+	
+	private Long idMecanico;
+	
+	public DeleteMechanic(Map<String, Object> ) {
+		// TODO Auto-generated constructor stub
+	}
+}

@@ -1,0 +1,10 @@
+package encuesta;
+
+public class Grafico {
+	public int si;
+	public int no;
+	public String pregunta;
+
+	public Grafico() {
+	}
+}

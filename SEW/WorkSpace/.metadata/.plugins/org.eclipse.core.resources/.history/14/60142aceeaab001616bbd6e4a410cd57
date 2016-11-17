@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="2.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html" encoding="UTF-8"
+        omit-xml-declaration="yes" indent="yes" />
+    <xsl:template match="/">
+        <xsl:variable name="titulacion"
+            select="'Grado en Ingeniería Informáticadel Software'" />
+        <html lang="es" xml:lang="es" />
+        <head>
+            <title>Lista Titulacion</title>
+        </head>
+        <body>
+            <h1>Grado en Ingeniería Informática del Software</h1>
+            <ul>
+                <xsl:for-each select="//alumno">
+                    <xsl:sort select="datos/nombre/apellidos" />
+                    <xsl:sort select="datos/nombre/nombre_pila" />
+                    <xsl:for-each select="titulacion">
+                        <xsl:if
+                            test="normalize-space(n_titulacion)=$titulacion">
+                            <xsl:apply-templates
+                                select=".." />
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:for-each>
+            </ul>
+        </body>
+    </xsl:template>
+</xsl:stylesheet>

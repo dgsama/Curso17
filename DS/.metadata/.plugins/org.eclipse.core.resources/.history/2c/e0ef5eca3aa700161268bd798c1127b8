@@ -1,0 +1,57 @@
+package encuesta;
+
+import java.util.ArrayList;
+
+import actualizar.Actualizar;
+
+public class Encuesta {
+
+	private int si, no;
+	private String pregunta;
+	private Grafico grafico;
+	private int counter;
+	private ArrayList<Actualizar> actualizaciones;
+
+	public Encuesta(String pregunta, Actualizar... actualizaciones) {
+		this.pregunta = pregunta;
+		for (Actualizar a : actualizaciones) {
+			this.actualizaciones.add(a);
+		}
+
+		counter = 0;
+		grafico = new Grafico();
+	}
+
+	public String getPregunta() {
+		return pregunta;
+	}
+
+	public int getVotosSi() {
+		return si;
+	}
+
+	public int getVotosNo() {
+		return no;
+	}
+
+	public void incrementaSi() {
+		si++;
+		counter++;
+		// if (counter == 4) {
+		actualizar();
+		// }
+	}
+
+	public void incrementaNo() {
+		no++;
+		actualizar();
+	}
+
+	private void actualizar() {
+		grafico.actualizaGráficoCircular();
+		grafico.actualizaGráficoBarras();
+		grafico.mostrarInfo(getVotosSi(), getVotosNo());
+		grafico.guardaResultados();
+	}
+
+}
