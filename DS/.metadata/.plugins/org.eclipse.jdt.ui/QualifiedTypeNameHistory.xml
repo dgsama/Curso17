@@ -19,4 +19,6 @@
 <fullyQualifiedTypeName name="decorators.Normalizer"/>
 <fullyQualifiedTypeName name="decorators.Encrypter"/>
 <fullyQualifiedTypeName name="decorators.Decorator"/>
+<fullyQualifiedTypeName name="actualizadores.BaseDeDatos"/>
+<fullyQualifiedTypeName name="actualizadores.Actualizar"/>
 </qualifiedTypeNameHistroy>
