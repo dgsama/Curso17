@@ -5,7 +5,6 @@ import java.io.*;
 import actualizadores.GraficoBarras;
 import actualizadores.GraficoCircular;
 import actualizadores.LineaDeEstado;
-import java.io.*;
 
 import encuesta.*;
 
