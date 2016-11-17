@@ -1,6 +1,9 @@
 package recorrerarboles;
 
 import java.util.*;
+
+import visitor.InterpreteVisitor;
+import visitor.PrintVisitor;
 import nodos.*;
 
 public class Main {
@@ -10,10 +13,7 @@ public class Main {
 		// 1. Construir árbol ---------------------------------------------
 
 		/*
-		 * read ancho;
-		 * read alto;
-		 * area = alto * ancho / 2;
-		 * print area + 10;
+		 * read ancho; read alto; area = alto * ancho / 2; print area + 10;
 		 */
 
 		List<Sentencia> sentencias = new ArrayList<Sentencia>();
@@ -25,20 +25,22 @@ public class Main {
 		sentencias.add(new Read(new Variable("alto")));
 
 		// area = alto * ancho / 2;
-		Producto prod = new Producto(new Variable("alto"), new Variable("ancho"));
-		sentencias.add(new Asignacion(new Variable("area"), new Division(prod, new ConstanteInt("2"))));
+		Producto prod = new Producto(new Variable("alto"),
+				new Variable("ancho"));
+		sentencias.add(new Asignacion(new Variable("area"), new Division(prod,
+				new ConstanteInt("2"))));
 
 		// print area + 10;
-		sentencias.add(new Print(new Suma(new Variable("area"), new ConstanteInt("10"))));
+		sentencias.add(new Print(new Suma(new Variable("area"),
+				new ConstanteInt("10"))));
 
 		// Crear el nodo raiz
 		Programa prog = new Programa(sentencias);
 
-		
 		// 2. Recorrer árbol ---------------------------------------------
 		System.out.println("\n--- Recorrido Recursivo: todo en un método");
 		RecorridoRecursivo rr = new RecorridoRecursivo();
-		rr.visit(prog);
+		// rr.visit(prog);
 
 		// No compila
 		System.out.println("\n--- Recorrido ideal: no compila");
@@ -48,7 +50,12 @@ public class Main {
 		// Que funcione lo siguiente:
 		System.out.println("\n--- Recorrido con Visitor: sin hacer");
 		PrintVisitor print = new PrintVisitor();
-		// prog.accept(printVisitor, null);
+		// prog.accept(print, null);
+
+		// Crear interprete
+		System.out.println("\n--- Recorrido con Visitor: interprete");
+		InterpreteVisitor interprete = new InterpreteVisitor();
+		prog.accept(interprete, null);
 
 	}
 }

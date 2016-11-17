@@ -21,4 +21,11 @@
 <fullyQualifiedTypeName name="decorators.Decorator"/>
 <fullyQualifiedTypeName name="actualizadores.BaseDeDatos"/>
 <fullyQualifiedTypeName name="actualizadores.Actualizar"/>
+<fullyQualifiedTypeName name="nodos.ConstanteInt"/>
+<fullyQualifiedTypeName name="nodos.Asignacion"/>
+<fullyQualifiedTypeName name="nodos.Sentencia"/>
+<fullyQualifiedTypeName name="visitor.Visitor"/>
+<fullyQualifiedTypeName name="java.io.Console"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="visitor.InterpreteVisitor"/>
 </qualifiedTypeNameHistroy>

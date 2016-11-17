@@ -1,0 +1,17 @@
+package visitor;
+
+import nodos.ConstanteInt;
+
+public interface Visitor {
+	public  Object visit(Asignacion asign,Object param);
+	public  Object visit(ConstanteInt cosInt,Object param);
+	public  Object visit(Division div,Object param);
+	public  Object visit(Print p,Object param);
+	public  Object visit(Producto prod,Object param);
+	public  Object visit(Programa prog,Object param);
+	public  Object visit(Read read,Object param);
+	public  Object visit(Suma sum,Object param);
+	public  Object visit(Variable var,Object param);
+	
+
+}
