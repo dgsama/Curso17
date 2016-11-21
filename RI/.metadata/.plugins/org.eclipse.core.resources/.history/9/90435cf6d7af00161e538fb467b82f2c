@@ -1,0 +1,41 @@
+package uo.ri.business.cash;
+
+import java.sql.Connection;
+
+public class FacturarReparaciones {
+
+	private static final String SQL_IMPORTE_REPUESTOS = "select sum(s.cantidad * r.precio) "
+			+ "	from  TSustituciones s, TRepuestos r "
+			+ "	where s.repuesto_id = r.id "
+			+ "		and s.intervencion_averia_id = ?";
+
+	private static final String SQL_IMPORTE_MANO_OBRA = "select sum(i.minutos * tv.precioHora / 60) "
+			+ "	from TAverias a, TIntervenciones i, TVehiculos v, TTiposVehiculo tv"
+			+ "	where i.averia_id = a.id "
+			+ "		and a.vehiculo_id = v.id"
+			+ "		and v.tipo_id = tv.id"
+			+ "		and a.id = ?"
+			+ "		and a.status = 'TERMINADA'";
+
+	private static final String SQL_UPDATE_IMPORTE_AVERIA = "update TAverias set importe = ? where id = ?";
+
+	private static final String SQL_ULTIMO_NUMERO_FACTURA = "select max(numero) from TFacturas";
+
+	private static final String SQL_INSERTAR_FACTURA = "insert into TFacturas(numero, fecha, iva, importe, status) "
+			+ "	values(?, ?, ?, ?, ?)";
+
+	private static final String SQL_VINCULAR_AVERIA_FACTURA = "update TAverias set factura_id = ? where id = ?";
+
+	private static final String SQL_ACTUALIZAR_ESTADO_AVERIA = "update TAverias set status = ? where id = ?";
+
+	private static final String SQL_VERIFICAR_ESTADO_AVERIA = "select status from TAverias where id = ?";
+
+	private static final String SQL_RECUPERAR_CLAVE_GENERADA = "select id from TFacturas where numero = ?";
+
+	private Connection connection;
+
+	public FacturarReparaciones() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
