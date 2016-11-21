@@ -17,10 +17,10 @@ public class UpdateMechanic {
 	private static String SQL = "update TMecanicos "
 			+ "set nombre = ?, apellidos = ? " + "where id = ?";
 
-	public UpdateMechanic(Map<String, Object> info) {
-		this.id = (Long) info.get("id");
-		this.nombre = (String) info.get("nombre");
-		this.apellidos = (String) info.get("apellidos");
+	public UpdateMechanic(Long id, String nombre, String apellidos) {
+		this.id = id;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
 	}
 
 	public void execute() {

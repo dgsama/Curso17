@@ -3,6 +3,8 @@ package uo.ri.ui.admin.action;
 import java.util.List;
 import java.util.Map;
 
+import uo.ri.business.AdminService;
+import uo.ri.business.impl.AdminServiceImpl;
 import uo.ri.business.impl.admin.ListMechanic;
 import uo.ri.common.BusinessException;
 import alb.util.console.Console;
@@ -14,7 +16,8 @@ public class ListMechanicsAction implements Action {
 	public void execute() throws BusinessException {
 		Console.println("\nListado de mecánicos\n");
 
-		List<Map<String, Object>> info = new ListMechanic().execute();
+		AdminService admin = new AdminServiceImpl();
+		List<Map<String, Object>> info = admin.findAllMechanics();
 		mostrarInfo(info);
 
 	}

@@ -15,8 +15,8 @@ public class DeleteMechanic {
 
 	private Long idMecanico;
 
-	public DeleteMechanic(Map<String, Object> info) {
-		this.idMecanico = (Long) info.get("idMecanico");
+	public DeleteMechanic(Long idMecanico2) {
+		this.idMecanico = idMecanico;
 	}
 
 	public void execute() {

@@ -15,10 +15,10 @@ public class AddMechanic {
 	private String nombre;
 	private String apellidos;
 
-	public AddMechanic(Map<String, Object> info) {
+	public AddMechanic(String nombre, String apellidos) {
 		super();
-		this.nombre = (String) info.get("nombre");
-		this.apellidos = (String) info.get("apellidos");
+		this.nombre = nombre;
+		this.apellidos = apellidos;
 	}
 
 	public void execute() {

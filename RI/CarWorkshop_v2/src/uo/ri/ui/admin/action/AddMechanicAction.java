@@ -5,6 +5,8 @@ import java.util.Map;
 
 import alb.util.console.Console;
 import alb.util.menu.Action;
+import uo.ri.business.AdminService;
+import uo.ri.business.impl.AdminServiceImpl;
 import uo.ri.business.impl.admin.AddMechanic;
 import uo.ri.common.BusinessException;
 
@@ -17,13 +19,9 @@ public class AddMechanicAction implements Action {
 		String nombre = Console.readString("Nombre");
 		String apellidos = Console.readString("Apellidos");
 
-		
-		Map<String, Object> info = new HashMap<String, Object>();
-		info .put("nombre", nombre);
-		info.put("apellidos", apellidos);
-
 		// Procesar
-		new AddMechanic(info).execute();
+		AdminService admin = new AdminServiceImpl();
+		admin.newMechanic(nombre, apellidos);
 	}
 
 }

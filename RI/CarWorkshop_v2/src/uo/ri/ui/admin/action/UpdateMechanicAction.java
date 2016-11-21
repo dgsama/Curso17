@@ -3,6 +3,8 @@ package uo.ri.ui.admin.action;
 import java.util.HashMap;
 import java.util.Map;
 
+import uo.ri.business.AdminService;
+import uo.ri.business.impl.AdminServiceImpl;
 import uo.ri.business.impl.admin.UpdateMechanic;
 import uo.ri.common.BusinessException;
 import alb.util.console.Console;
@@ -18,13 +20,9 @@ public class UpdateMechanicAction implements Action {
 		String nombre = Console.readString("Nombre");
 		String apellidos = Console.readString("Apellidos");
 
-		Map<String, Object> info = new HashMap<String, Object>();
-		info.put("id", id);
-		info.put("nombre", nombre);
-		info.put("apellidos", apellidos);
 
-		new UpdateMechanic(info).execute();
-		;
+		AdminService admin = new AdminServiceImpl();
+		admin.updateMechanic(id, nombre, apellidos);
 
 	}
 
