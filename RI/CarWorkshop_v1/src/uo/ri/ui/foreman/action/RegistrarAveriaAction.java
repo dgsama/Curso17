@@ -1,6 +1,6 @@
 package uo.ri.ui.foreman.action;
 
-import uo.ri.business.foreman.RegistrarAveria;
+import uo.ri.business.impl.foreman.RegistrarAveria;
 import uo.ri.common.BusinessException;
 import alb.util.menu.Action;
 

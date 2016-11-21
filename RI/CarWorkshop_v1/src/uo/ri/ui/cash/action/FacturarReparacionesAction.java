@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import uo.ri.business.cash.FacturarReparaciones;
+import uo.ri.business.impl.cash.FacturarReparaciones;
 import uo.ri.common.BusinessException;
 import alb.util.console.Console;
 import alb.util.date.DateUtil;

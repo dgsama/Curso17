@@ -3,7 +3,7 @@ package uo.ri.ui.admin.action;
 import java.util.HashMap;
 import java.util.Map;
 
-import uo.ri.business.admin.UpdateMechanic;
+import uo.ri.business.impl.admin.UpdateMechanic;
 import uo.ri.common.BusinessException;
 import alb.util.console.Console;
 import alb.util.menu.Action;
