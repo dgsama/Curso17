@@ -1,0 +1,27 @@
+package actions;
+
+import util.Macro;
+
+public class EjecutarMacro {
+
+	private String nombre;
+
+	public EjecutarMacro(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void execute() {
+		Macro mac = null;
+		for (Macro m : this.macros) {
+			if (m.getNombre().toLowerCase()
+					.equals(line[1].trim().toString().toLowerCase())) {
+				mac = m;
+				for (Action act : mac.getAcciones()) {
+					act.execute();
+				}
+				break;
+			}
+		}
+	}
+
+}

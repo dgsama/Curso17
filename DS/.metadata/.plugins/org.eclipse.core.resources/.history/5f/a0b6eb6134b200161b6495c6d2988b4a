@@ -1,0 +1,14 @@
+package actions;
+
+public class Borrar implements Action {
+
+	@Override
+	public StringBuilder execute() {
+		int indexOfLastWord = texto.toString().trim().lastIndexOf(" ");
+		if (indexOfLastWord == -1)
+			return texto = new StringBuilder("");
+		else
+			return texto.setLength(indexOfLastWord + 1);
+	}
+
+}

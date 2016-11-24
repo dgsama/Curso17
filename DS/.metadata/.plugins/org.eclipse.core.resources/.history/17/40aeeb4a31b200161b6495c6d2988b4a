@@ -1,0 +1,22 @@
+package main;
+
+import io.FileManagement;
+
+import java.io.*;
+import java.util.regex.*;
+
+public class Main {
+	private static BufferedReader in;
+	private static StringBuilder texto;
+	private static FileManagement fileManag;
+
+	public static void main(String[] args) throws IOException {
+		in = new BufferedReader(new InputStreamReader(System.in));
+		texto = new StringBuilder("");
+		fileManag = new FileManagement();
+
+		
+
+	}
+
+}
