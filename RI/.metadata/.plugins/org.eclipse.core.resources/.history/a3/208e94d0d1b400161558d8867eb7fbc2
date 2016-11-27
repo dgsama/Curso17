@@ -10,13 +10,8 @@ import uo.ri.common.BusinessException;
 public class CashServiceImpl implements CashService {
 
 	@Override
-	public Map<String, Object> facturarReparaciones(List<Long> idsAveria) {
-		try {
-			return new FacturarReparaciones().execute(idsAveria);
-		} catch (BusinessException e) {
-			e.printStackTrace();
-		}
-		return null;
+	public Map<String, Object> facturarReparaciones(List<Long> idsAveria) throws BusinessException {
+		return new FacturarReparaciones().execute(idsAveria);
 	}
 
 }

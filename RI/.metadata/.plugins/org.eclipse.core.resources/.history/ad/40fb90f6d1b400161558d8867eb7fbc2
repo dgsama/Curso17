@@ -33,8 +33,9 @@ public class FacturarReparacionesAction implements Action {
 
 		Map<String, Object> infoFactura;
 		CashService cashServ = new CashServiceImpl();
-
-		infoFactura = cashServ.facturarReparaciones(idsAveria);
+		
+		new FacturarReparaciones()
+				.execute(idsAveria);
 
 		mostrarFactura(infoFactura);
 
@@ -43,14 +44,16 @@ public class FacturarReparacionesAction implements Action {
 	private void mostrarFactura(Map<String, Object> infoFactura) {
 
 		Console.printf("Factura nº: %d\n", infoFactura.get("numeroFactura"));
-		Console.printf("\tFecha: %1$td/%1$tm/%1$tY\n", infoFactura.get("fechaFactura"));
+		Console.printf("\tFecha: %1$td/%1$tm/%1$tY\n",
+				infoFactura.get("fechaFactura"));
 		Console.printf("\tTotal: %.2f €\n", infoFactura.get("totalFactura"));
 		Console.printf("\tIva: %.1f %% \n", infoFactura.get("iva"));
 		Console.printf("\tTotal con IVA: %.2f €\n", infoFactura.get("importe"));
 	}
 
 	private boolean masAverias() {
-		return Console.readString("¿Añadir más averias? (s/n) ").equalsIgnoreCase("s");
+		return Console.readString("¿Añadir más averias? (s/n) ")
+				.equalsIgnoreCase("s");
 	}
 
 }

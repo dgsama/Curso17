@@ -34,7 +34,7 @@ public class FacturarReparacionesAction implements Action {
 		Map<String, Object> infoFactura;
 		CashService cashServ = new CashServiceImpl();
 
-		infoFactura = cashServ.facturarReparaciones(idsAveria);
+		infoFacturas = cashServ.facturarReparaciones(idsAveria);
 
 		mostrarFactura(infoFactura);
 

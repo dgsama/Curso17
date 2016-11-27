@@ -1,0 +1,7 @@
+package uo.ri.business.impl;
+
+import uo.ri.business.CashService;
+
+public class CashServiceImpl implements CashService{
+
+}
