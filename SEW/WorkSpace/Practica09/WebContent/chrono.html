@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo de clases y DOM</title>
+<link rel="stylesheet" href="estilo.css" type="text/css"  media="screen">
+<script type="text/javascript" src="Chrono.js">
+</script>
+<script type="text/javascript">
+function chronos () {
+	const  objSection = document.querySelector('section');
+	const a = new Chrono();
+	const b = new Chrono("iniciar", "parar", "reiniciar");
+	objSection.appendChild(a.node());
+	objSection.appendChild(b.node());
+}
+</script>
+</head>
+<body onload="chronos()">
+    <header>
+        <h1>Ejemplo de clases y DOM</h1>
+        <h2>Cronómetros</h2>
+    </header>
+    <section>
+        <!-- Reservado para los cronómetros -->
+    </section>
+    <footer>
+        <hr>
+        <p>
+            <em>Ejemplo de clases de objetos</em>
+        </p>
+    </footer>
+</body>
+</html>

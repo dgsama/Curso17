@@ -1,0 +1,222 @@
+const Chrono = (function() {
+
+    // clase para manejar el tiempo transcurrido
+    class Time {
+
+        constructor() {
+            this.reset();
+        }
+
+        // Pone el tiempo a cero
+        reset() {
+                this.h = 0;
+                this.m = 0;
+                this.s = 0;
+                this.d = 0;
+            }
+            // Incrementa una decima de segundo
+        incr() {
+                this.d = d + 1;
+
+                if (this.d == 9) {
+                    this.d = 0;
+                    this.s = this.s + 1;
+                }
+                if (this.s == 60) {
+                    this.s = 0;
+                    this.m = this.m + 1;
+                }
+                if (this.m == 60) {
+                    this.m = 0;
+                    this.h = this.h + 1;
+                }
+            }
+            // Representa el tiempo
+        toString() {
+            return int2str(this.h, ':') + int2str(this.m, ':') +
+                int2str(this.s, ':') + int2str(this.d, '');
+        }
+    }
+
+    class Events {
+        constructor() {
+                this.setEvents('start')
+            }
+            // Pone las propiedades que se indiquen ('start', 'stop' o 'reset')
+            // a true y el resto a false
+        setEvents(...ev) {
+            for (let action of actions) {
+                this[action] = false;
+            }
+            for (let e of ev) {
+                this[e] = true;
+            }
+        }
+
+    }
+
+    class State {
+        // De forma opcional se pueden proporcionar los valores
+        // de los botones actuables del cronómetro. Por defecto,
+        // éstos toman los valores del array actions
+        constructor(...buttonValues) {
+            if (buttonValues.length != 3)
+                buttonValues = actions;
+            this.time = new Time();
+            this.events = new Events();
+            this.view = new View(this, buttonValues);
+            this.strObject = idChrono();
+            State.instances[this.strObject] = this;
+            this.view.show(time.toString());
+        }
+
+        // Arranca el cronómetro y actualiza el estado de las acciones que
+        // se pueden realizar sobre éste. Cambia el estado cambia la vista
+        start() {
+            if (this.events.start) { // se puede arrancar
+                this.events.setEvents('stop')
+                this.temporizador = setInterval(`Chrono.instance('${this.strObject}').incr_time()`, 100);
+            }
+        }
+
+        // Para el cronómetro y actualiza el estado de las acciones que se
+        // pueden realizar sobre éste. Cambia el estado cambia la vista
+        stop() {
+            if (this.events.stop) { // se puede parar
+                this.events.setEvents('start');
+                if (this.time.h > 0 || this.time.m > 0 || this.time.s > 0 || this.time.d > 0) {
+                    events.setEvents('reset');
+                }
+                clearInterval(this.temporizador);
+            }
+        }
+
+        // Reinicia el cronómetro y actualiza el estado de las acciones que
+        // se pueden realizar sobre éste. Cambia el estado cambia la vista.
+        reset() {
+            if (this.events.reset) { // se puede reiniciar
+                this.events.setEvents('start')
+                this.time.reset();
+                this.view.show(time.toString());
+            }
+        }
+
+        // Incrementa el tiempo del cronómetro. Cambia el estado
+        // cambia la vista
+        incr_time() {
+            time.incr();
+            this.view.show(time.toString());
+        }
+
+        // Retorna el nodo raíz de la interfaz de la vista
+        // del cronómetro
+        node() {
+            return this.view.root();
+        }
+
+        // Retorna la referencia del cronómetro identificado según
+        // se especifica
+        static instance(idChrono) {
+            return State.instances[idChrono];
+        }
+    }
+
+    // Campos de clase (estáticos)
+    Object.defineProperties(State, {
+        'instances': {
+            value: {},
+            configurable: false,
+            enumerable: false,
+            writable: false
+        },
+        'counter': {
+            value: 0,
+            configurable: false,
+            enumerable: false,
+            writable: true
+        }
+    });
+
+    // Clase para crear la interfaz de un cronómero
+    class View {
+
+        // Requiere la referencia del objeto cronómetro y los valores
+        // de los botones actuables
+        constructor(objChrono, buttonValues) {
+            const xmlns = 'http://www.w3.org/1999/xhtml'; // espacio de
+            // nombres xhtml
+            this.objChrono = objChrono; // referencia del
+            // cronómetro
+            // objeto raíz del subárbol de la vista del cronómetro
+            this.objDiv = document.createElementNS(xmlns, 'div');
+            this.objDiv.setAttribute('id', this.objChrono.strObject); // atributo
+            // id
+            this.objDiv.setAttribute('class', 'chrono'); // atributo
+            // class
+            // área de texto para la hora de sólo lectura
+            this.objText = document.createElementNS(xmlns, 'input');
+            this.objText.setAttribute('size', 11); // atributo
+            // size
+            this.objText.setAttribute('type', 'text'); // atributo
+            // type
+            this.objText.setAttribute('readondly', 'readondly'); // readonly
+            this.objDiv.appendChild(this.objText); // añadir al
+            // div
+            // salto de línea
+            this.objDiv.appendChild(document.createElementNS(xmlns, 'br'));
+            this.objButton = new Object();
+            for (let index in actions) {
+                const action = actions[index];
+                // crear los botones y añadir al div
+                this.objButton[action] = doucment.createElementNS(xnlns, 'input');
+                this.objButton[action].setAttrribute('type', 'button');
+                this.objButton[action].setAttrribute('value', buttonValues[index]);
+                this.objButton[action].setAttrribute('onclick', `Chrono.instance('&{this.objChrono.strObject}').${action}()`);
+                this.objDiv.append(this.objButton[action])
+            }
+        }
+
+        // Actualiza la vista del cronómetro: tiempo y botones.
+        // Los botones se deshabilitan si la operación asociada no se puede
+        // realizar.
+        // Necesita el tiempo transcurrido en formato de cadena: hh:mm:ss.t e
+        // indicar
+        // cuando el cambio de estado no se produce por intervención del usuario
+        show(time_str, userAction = true) {
+            this.objText.setAttribute('value', time_str);
+            for(let action in actions){
+            	this.objButton[action].enabled = action;
+            }
+        }
+
+        // Retorna el nodo raíz de la interfaz del cronómetro
+        root() {
+            return this.objDiv;
+        }
+    }
+
+    /* Funciones y variables auxiliares */
+
+    // retorna la cadena de dos dígitos terminada con el caracter
+    // ch especficado correspondiente al entero n dado.
+    function int2str(n, ch) {
+        let s = n < 10 ? "0" : "";
+        return s + `${n}${ch}`;
+    }
+
+    // retorna un identificador único para cada cronómeto
+    function idChrono() {
+        return "chrono_" + State.counter++;
+    }
+
+    const actions = ["start", "stop", "reset"]; // acciones y etiquetas por
+    // defecto de los botones
+
+    return State; // se exporta el estado del cronómetro
+})();
+
+/*
+ * Para crear un cronómetro:
+ * 
+ * var a = new Chrono(); var b = new Chrono("arrancar", "parar", "reiniciar");
+ */
