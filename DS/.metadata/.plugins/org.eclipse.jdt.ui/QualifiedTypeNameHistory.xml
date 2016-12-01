@@ -35,4 +35,20 @@
 <fullyQualifiedTypeName name="nodos.Suma"/>
 <fullyQualifiedTypeName name="nodos.ConstanteInt"/>
 <fullyQualifiedTypeName name="nodos.Print"/>
+<fullyQualifiedTypeName name="platform.Image2D"/>
+<fullyQualifiedTypeName name="java.awt.Point"/>
+<fullyQualifiedTypeName name="platform.playstation.Playstation5API"/>
+<fullyQualifiedTypeName name="platform.windows.WindowsAPI"/>
+<fullyQualifiedTypeName name="org.omg.PortableServer.AdapterActivator"/>
+<fullyQualifiedTypeName name="adapter.AdaptadorPlataforma"/>
+<fullyQualifiedTypeName name="adapter.AndroidAdapter"/>
+<fullyQualifiedTypeName name="adapter.WindowsAdapter"/>
+<fullyQualifiedTypeName name="adapter.PSAdapter"/>
+<fullyQualifiedTypeName name="java.lang.AbstractMethodError"/>
+<fullyQualifiedTypeName name="template.AbstractTemplate"/>
+<fullyQualifiedTypeName name="game.BallGame"/>
+<fullyQualifiedTypeName name="platform.android.AndroidAPI"/>
+<fullyQualifiedTypeName name="template.AndroidTemplate"/>
+<fullyQualifiedTypeName name="template.WindowsTemplate"/>
+<fullyQualifiedTypeName name="template.PSTemplate"/>
 </qualifiedTypeNameHistroy>

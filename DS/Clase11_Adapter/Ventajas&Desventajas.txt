@@ -1,0 +1,11 @@
+Patron Template
+--Ventajas:
+		Si cambian las apis, solo cambian las clases que las implementan.
+--Desventajas:
+		Sio cambia el juego, las subclases tienen que implementar dichos cambios, y si no son comunes cada uno tendra una implementacion diferente.
+Patron Adapter
+--Ventajas:
+		Si cambia el juego, apenas hay modificaciones.
+		
+--Desventajas:
+		Si cambian las apis hay multiples modificaciones(Todas los adapters implementan loss cambios aunque dichos meetodos no hagan nada).
