@@ -1,0 +1,33 @@
+package adapter;
+
+import java.awt.Point;
+
+import platform.Image2D;
+
+public class PSAdapter implements AdaptadorPlataforma{
+
+	@Override
+	public void setAPI() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Image2D loadImage(String file) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Point getPosition() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void drawBall(Image2D image, Point point) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

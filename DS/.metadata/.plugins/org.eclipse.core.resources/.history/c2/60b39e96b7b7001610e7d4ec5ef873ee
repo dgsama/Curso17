@@ -1,0 +1,18 @@
+package game;
+
+import platform.android.AndroidAPI;
+import template.AndroidTemplate;
+import template.WindowsTemplate;
+
+public class Main {
+	public static void main(String[] args) {
+		BallGame gameAndroid = new AndroidTemplate();
+		gameAndroid.play();
+		
+		BallGame gameWindows = new WindowsTemplate();
+		gameWindows.play();
+		
+		BallGame gamePs = new AndroidTemplate();
+		gameAndroid.play();
+	}
+}

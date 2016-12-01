@@ -1,6 +1,9 @@
 package main;
 
+
 import vista.*;
+import miPropuesta.FotoAdapter;
+import miPropuesta.MonumentoAdapter;
 import model.*;
 
 public class Main {
@@ -14,34 +17,32 @@ public class Main {
 		System.out.println("\n 1. Metiendo elementos en el mapa");
 
 		for (Monumento monumento : db.selectMonumentos()) {
-			map.add(monumento);
+			map.add(new MonumentoAdapter(monumento));
 		}
 
 		for (Foto foto : db.selectFotos()) {
-			map.add(foto);
+			map.add(new FotoAdapter(foto));
 		}
 
 		for (Restaurante restaurante : db.selectRestaurantes()) {
-			map.add(restaurante);
+			// map.add(restaurante);
 		}
 
-		// 2. En el mapa se dibujan los marcadores para los elementos añadidos
+		// 2. En el mapa se dibujan los marcadores para los elementos aï¿½adidos
 		// al mapa
 		System.out.println("\n 2. Mostrando mapa");
 		map.dibujar();
 
 		// 3. El usuario presiona brevemente la pantalla para recibir
-		// información de
+		// informaciï¿½n de
 		// cada elemento
-		System.out
-				.println("\n 3. Pulsación breve sobre cada elemento: información en tooltip");
+		System.out.println("\n 3. Pulsaciï¿½n breve sobre cada elemento: informaciï¿½n en tooltip");
 		map.click(11, 11); // Nombre y autor del monumento (coliseo)
-		map.click(21, 21); // Descripción de la foto y usuario que la ha subido
-		map.click(31, 31); // Nombre y teléfono del restaurante
+		map.click(21, 21); // Descripciï¿½n de la foto y usuario que la ha subido
+		map.click(31, 31); // Nombre y telï¿½fono del restaurante
 
 		// 4. El usuario deja pulsado un marcador para abrir un elemento
-		System.out
-				.println("\n 4. Pulsación larga sobre cada elemento: abrir elemento");
+		System.out.println("\n 4. Pulsaciï¿½n larga sobre cada elemento: abrir elemento");
 		map.longClick(11, 11); // Navegar hasta el coliseo con el GPS
 		map.longClick(21, 21); // Bajarse foto
 		map.longClick(31, 31); // Llamar al restaurante

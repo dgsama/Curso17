@@ -1,0 +1,10 @@
+1480587155692	Rename package 'src.game'
+1480587167318	Rename package 'src.platform'
+1480587173951	Rename package 'src.platform.android'
+1480587179631	Rename package 'src.platform.playstation'
+1480587185420	Rename package 'src.platform.windows'
+1480589077271	Rename type 'AndroidAdapter'
+1480589084212	Rename type 'PSAdapter'
+1480589091918	Rename type 'WindowsAdapter'
+1480589380671	Rename type 'AbstractTemplate'
+1480590071019	Delete element
