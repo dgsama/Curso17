@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
-org.eclipse.rse.preferences.order.connections=EII-L-12-06.Local
+org.eclipse.rse.preferences.order.connections=EII-L-12-06.Local;EII-L-12-06.www-sew.dyndns.org
+org.eclipse.rse.preferences.verify.connection=false

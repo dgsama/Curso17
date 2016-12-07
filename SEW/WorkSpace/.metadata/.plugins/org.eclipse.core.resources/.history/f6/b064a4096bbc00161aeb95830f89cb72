@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+body {
+    font-family: verdana, sans-serif;
+    font-size: 16px;
+    color: #0000ff;
+    background-color: rgb(248, 248, 255);
+    margin: 2em;
+}
+
+div.chat {
+    width: 690px;
+    margin: 0.2em 1.25em;
+    background-color: #61210B;
+    border-radius: 15px;
+    padding: 15px;
+    overflow: auto;
+}
+
+div.users {
+    float: right;
+    width: 150px;
+    height: 440px;
+    color: #ddf9fb;
+    background-color: #5F4C0B;
+    border-radius: 15px;
+    border: 2px inset rgba(0, 0, 255, 0.6);
+}
+
+div.chat div:first-child {
+    float: left;
+    width: 500px;
+}
+
+div.chat fieldset {
+    width: 0;
+}
+
+div.chat legend {
+    color: #FBEFEF;
+    font-style: italic;
+    font-size: 80%; 
+}
+
+div.messages {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(248, 248, 255);
+    border-radius: 15px;
+    padding: 8px;
+    margin-bottom: 1.25em;
+    border: 2px inset rgba(0, 0, 255, 0.6);
+    font-size: 80%;
+}
+
+div.messages div {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    border-bottom: 1px dotted rgba(70%, 70%, 100%, 0.8);
+}
+
+div.messages div:nth-child(2n) {
+    background-color: #F8ECE0;
+}
+
+div.messages div:first-child {
+    border-top: 1px dotted rgba(70%, 70%, 100%, 0.8);
+}
+
+div.messages div:last-child {
+    margin-bottom: 8px;
+}
+
+div.messages p {
+    float: left;
+    font-size: 80%;
+    font-style: italic;
+    margin: 0;
+    padding: 2px;
+}
+
+div.messages pre {
+    overflow: hidden;
+    padding: 4px;
+    margin: 0;
+}
+
+div.chat form {
+    margin-top: 2em;
+    padding: 0;
+}
+
+div.chat textarea {
+    background-color: #F8ECE0;
+    width: 485px;
+    resize: none;
+    height: 100px;
+}
+
+#chat_container > h2 {
+    font-size: 110%;
+    margin: 0 0 0 1.25em;
+    padding: 0 0 0 1em;
+}
+
+div.users > h2 {
+    font-size: 100%;
+    padding: 6px;
+    background-color: transparent;
+}
+
+div.users li {
+    font-size: 90%;
+    margin-left: -0.75em;
+}
+
+form.signin fieldset {
+    width: 0;
+}
+
+form.signin input[type="submit"],
+form.signin input[type="reset"] {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 6px;
+    color: #F8ECE0;
+    background-color: #ff80ff;
+    border: 3px outset #0000ff;
+}
+
+section + form fieldset {
+    margin-left: 600px;
+    border: none;
+}
+
+section + form input {
+    font-style: italic;                                                                                                                                                                          
+    font-size: 120%;
+    padding: 5px 10px;
+    color: #F8ECE0;
+    background-color: #ff80ff;
+    border: 3px outset #0000ff;
+}
