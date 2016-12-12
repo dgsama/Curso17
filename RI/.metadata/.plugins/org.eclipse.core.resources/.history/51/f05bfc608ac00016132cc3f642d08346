@@ -1,0 +1,21 @@
+package uo.ri.conf;
+
+import uo.ri.business.AdminService;
+
+public class ServicesFactory {
+
+	public ServicesFactory() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public AdminService getAdminService() {
+		return null;
+	}
+
+public CashService getCashService
+
+	{
+		return null;
+	}
+
+}

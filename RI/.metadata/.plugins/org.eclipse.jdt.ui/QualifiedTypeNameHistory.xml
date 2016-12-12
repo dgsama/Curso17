@@ -17,4 +17,7 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="uo.ri.business.AdminService"/>
 <fullyQualifiedTypeName name="uo.ri.business.impl.admin.AddMechanic"/>
+<fullyQualifiedTypeName name="uo.ri.business.impl.cash.FacturarReparaciones"/>
+<fullyQualifiedTypeName name="uo.ri.business.CashService"/>
+<fullyQualifiedTypeName name="uo.ri.business.impl.CashServiceImpl"/>
 </qualifiedTypeNameHistroy>
