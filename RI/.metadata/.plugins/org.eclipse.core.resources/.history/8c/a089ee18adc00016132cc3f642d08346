@@ -1,0 +1,5 @@
+package uo.ri.business.impl.Ampliacion.GestionRepuestos;
+
+public class AddRepuesto {
+
+}

@@ -1,0 +1,64 @@
+package uo.ri.persistence.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.Map;
+
+import alb.util.jdbc.Jdbc;
+import uo.ri.conf.Conf;
+import uo.ri.persistence.RepuestosGateway;
+
+public class RepuestosGatewayImpl implements RepuestosGateway {
+	
+	Connection c;
+
+	@Override
+	public void setConnection(Connection c) {
+		c = con;
+
+	}
+
+	@Override
+	public void añadirRepuesto(String descripcion, double precio, int min_cantidad, int max_cantidad, int existencias) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void actualizarRepuesto(Long id, double precio) {
+		PreparedStatement ps = null;
+
+		try {
+			ps = c.prepareStatement(Conf.get("SQL_UPDATE_MECHANIC"));
+			ps.setLong(1, id);
+			ps.setDouble(2, precio);
+			ps.executeUpdate();
+
+		} catch (Exception e) {
+
+		} finally {
+			Jdbc.close(ps);
+		}
+
+	}
+
+	@Override
+	public void borrarRepuesto(long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Map<String, Object> encontrarRepuestoById(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Map<String, Object>> listaRepuestos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

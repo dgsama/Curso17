@@ -1051,3 +1051,4 @@ java.io.InvalidClassException: org.eclipse.m2e.core.internal.project.registry.Ba
 2016-11-27 19:35:39,693 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\David\Documents\WorkSpaces\Curso16-17\Curso17\RI\AlbUtil\src\main\resources
 2016-11-27 19:35:39,694 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2016-11-27 19:35:39,694 [Worker-11] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\David\Documents\WorkSpaces\Curso16-17\Curso17\RI\AlbUtil\src\test\resources
+2016-12-12 22:33:46,148 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.

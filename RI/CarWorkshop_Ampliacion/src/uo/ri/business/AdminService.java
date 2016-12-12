@@ -1,5 +1,6 @@
 package uo.ri.business;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -12,5 +13,15 @@ public interface AdminService {
 	void updateMechanic(Long id, String nombre, String apellidos);
 
 	List<Map<String, Object>> findAllMechanics();
+
+	public void añadirRepuesto(String descripcion, double precio, int min_cantidad, int max_cantidad, int existencias);
+
+	public void actualizarRepuesto(Long id, double precio);
+
+	public void borrarRepuesto(long id);
+
+	public ArrayList<Map<String, Object>> listaRepuestos();
+	
+	ArrayList<Map<String, Object>> encontrarPedidosProveedor(Long id) throws Exception;
 
 }

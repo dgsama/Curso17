@@ -1,0 +1,22 @@
+package uo.ri.persistence;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.Map;
+
+public interface RepuestosGateway {
+	
+	public void setConnection(Connection c);
+
+	public void añadirRepuesto(String nombre, Double precio, Integer unidades, Integer minStock);
+	
+	public void borrarRepuesto(long id);
+	
+	public Map<String, Object> findById(Long id);
+
+	public ArrayList<Map<String, Object>> findAll();
+
+	public void update(Long id, String nombre, Double precio);
+
+
+}

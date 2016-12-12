@@ -1,7 +1,10 @@
 package uo.ri.ui.admin;
 
 import alb.util.menu.BaseMenu;
-import alb.util.menu.NotYetImplementedAction;
+import uo.ri.business.impl.Ampliacion.GestionRepuestos.ListarRepuestos;
+import uo.ri.ui.admin.action.AddRepuestoAction;
+import uo.ri.ui.admin.action.DeleteRepuestoAction;
+import uo.ri.ui.admin.action.UpdateRepuestoAction;
 
 public class RepuestosMenu extends BaseMenu {
 
@@ -9,10 +12,10 @@ public class RepuestosMenu extends BaseMenu {
 		menuOptions = new Object[][] { 
 			{"Administrador > Gestión de repuestos", null},
 			
-			{ "Añadir repuesto", 				NotYetImplementedAction.class }, 
-			{ "Modificar datos de repuesto", 	NotYetImplementedAction.class }, 
-			{ "Eliminar repuesto", 				NotYetImplementedAction.class }, 
-			{ "Listar repuestos", 				NotYetImplementedAction.class },
+			{ "Añadir repuesto", 				AddRepuestoAction.class }, 
+			{ "Modificar datos de repuesto", 	UpdateRepuestoAction.class }, 
+			{ "Eliminar repuesto", 				DeleteRepuestoAction.class }, 
+			{ "Listar repuestos", 				ListarRepuestos.class },
 		};
 	}
 

@@ -1,0 +1,31 @@
+package uo.ri.business.impl.Ampliacion.GestionRepuestos;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
+
+import alb.util.jdbc.Jdbc;
+import uo.ri.conf.PersistenceFactory;
+import uo.ri.persistence.MecanicosGateway;
+import uo.ri.persistence.RepuestosGateway;
+
+public class ListarRepuestos {
+	public List<Map<String, Object>> execute() {
+
+		Connection c = null;
+
+		try {
+			c = Jdbc.getConnection();
+
+			RepuestosGateway gate = PersistenceFactory.getRepuestosGateway()();
+			gate.setConnection(c);
+			return gate.findAllMechanics();
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			Jdbc.close(c);
+		}
+	}
+}

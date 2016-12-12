@@ -3,8 +3,6 @@ package uo.ri.conf;
 import java.io.IOException;
 import java.util.Properties;
 
-import sun.security.jca.GetInstance;
-
 public class Conf {
 
 	private static final String CONF_FILE = "configuration.properties";

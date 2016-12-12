@@ -1,0 +1,60 @@
+package uo.ri.persistence.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import alb.util.jdbc.Jdbc;
+import uo.ri.conf.Conf;
+import uo.ri.persistence.PedidosGateway;
+
+public class PedidoGatewayImpl implements PedidosGateway {
+
+	
+	private Connection c;
+
+	@Override
+	public void setConnection(Connection c) {
+		this.c = c;
+	}
+
+	@Override
+	public ArrayList<Map<String, Object>> findPedidosByIDProveedor(long id) {
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		Map<String, Object> map = new HashMap<String, Object>();
+		ArrayList<Map<String, Object>> lista = new ArrayList<Map<String, Object>>();
+
+		if (findById(idProveedor) == null)
+			throw new Exception();
+		else {
+
+			try {
+				pst = c.prepareStatement(Conf.get("SQL_FIND_PEDIDOS_PROVEEDOR"));
+				pst.setLong(1, idProveedor);
+				rs = pst.executeQuery();
+				while (rs.next()) {
+					
+					map.put("ID Pedido", rs.getLong(1));
+					map.put("ID Proveedor", rs.getLong(2));
+					map.put("Cantidad", rs.getInt(3));
+					map.put("ID Repuesto", rs.getLong(4));
+					map.put("Status", rs.getString(5));
+					map.put("Fecha", rs.getDate(6));
+					lista.add(map);
+				}
+
+			} catch (SQLException e) {
+				throw new RuntimeException(e);
+			} finally {
+				Jdbc.close(rs, pst);
+			}
+		}
+
+		return lista;
+	}
+}

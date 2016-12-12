@@ -1,0 +1,14 @@
+package uo.ri.ui.admin;
+
+import alb.util.menu.BaseMenu;
+import uo.ri.business.impl.Ampliacion.GestionRepuestos.ListarRepuestos;
+import uo.ri.ui.admin.action.AddRepuestoAction;
+import uo.ri.ui.admin.action.DeleteRepuestoAction;
+import uo.ri.ui.admin.action.UpdateRepuestoAction;
+
+public class PedidosMenu extends BaseMenu {
+
+	public PedidosMenu() {
+		menuOptions = new Object[][] { { "Listar pedidos de un proveedor", ListarRepuestosProveedor.class }, };
+	}
+}

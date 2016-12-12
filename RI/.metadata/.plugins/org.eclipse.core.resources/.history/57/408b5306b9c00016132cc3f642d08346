@@ -1,0 +1,23 @@
+package uo.ri.persistence.impl;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.Map;
+
+import uo.ri.persistence.PedidosGateway;
+
+public class PedidoGatewayImpl implements PedidosGateway {
+
+	@Override
+	public ArrayList<Map<String, Object>> findPedidosByIDProveedor(long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setConnection(Connection c) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

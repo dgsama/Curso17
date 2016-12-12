@@ -6,13 +6,11 @@
 <fullyQualifiedTypeName name="alb.util.math.Round"/>
 <fullyQualifiedTypeName name="alb.util.date.DateUtil"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="alb.util.console.Console"/>
 <fullyQualifiedTypeName name="org.hsqldb.lib.HashMap"/>
 <fullyQualifiedTypeName name="uo.ri.business.admin.UpdateMechanic"/>
 <fullyQualifiedTypeName name="uo.ri.ui.cash.action.FacturarReparacionesAction"/>
 <fullyQualifiedTypeName name="uo.ri.business.cash.FacturarReparaciones"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="uo.ri.business.AdminService"/>
@@ -20,4 +18,21 @@
 <fullyQualifiedTypeName name="uo.ri.business.impl.cash.FacturarReparaciones"/>
 <fullyQualifiedTypeName name="uo.ri.business.CashService"/>
 <fullyQualifiedTypeName name="uo.ri.business.impl.CashServiceImpl"/>
+<fullyQualifiedTypeName name="uo.ri.persistence.impl.AveriasGatewayImpl"/>
+<fullyQualifiedTypeName name="uo.ri.common.BusinessException"/>
+<fullyQualifiedTypeName name="uo.ri.business.impl.Ampliacion.GestionRepuestos.AddRepuesto"/>
+<fullyQualifiedTypeName name="uo.ri.ui.admin.action.AddRepuestoAction"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="uo.ri.ui.admin.action.UpdateRepuestoAction"/>
+<fullyQualifiedTypeName name="uo.ri.ui.admin.action.DeleteRepuestoAction"/>
+<fullyQualifiedTypeName name="uo.ri.persistence.RepuestosGateway"/>
+<fullyQualifiedTypeName name="uo.ri.business.impl.Ampliacion.GestionRepuestos.UpdateRepuesto"/>
+<fullyQualifiedTypeName name="uo.ri.business.impl.Ampliacion.GestionRepuestos.DeleteRepuesto"/>
+<fullyQualifiedTypeName name="uo.ri.business.impl.Ampliacion.GestionRepuestos.ListarRepuestos"/>
+<fullyQualifiedTypeName name="uo.ri.persistence.PedidosGateway"/>
+<fullyQualifiedTypeName name="uo.ri.persistence.impl.PedidoGatewayImpl"/>
+<fullyQualifiedTypeName name="uo.ri.business.impl.Ampliacion.ListarPedidosProoveedor"/>
+<fullyQualifiedTypeName name="alb.util.menu.Action"/>
+<fullyQualifiedTypeName name="uo.ri.ui.admin.action.ListarRepuestosProveedor"/>
 </qualifiedTypeNameHistroy>

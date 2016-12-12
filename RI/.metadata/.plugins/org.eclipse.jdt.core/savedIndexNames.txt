@@ -5,6 +5,7 @@ INDEX VERSION 1.127+D:\David\Documents\WorkSpaces\Curso16-17\Curso17\RI\.metadat
 1174630048.index
 2460893137.index
 2506192191.index
+1972203799.index
 1770769936.index
 3076131927.index
 3870684539.index
@@ -19,9 +20,12 @@ INDEX VERSION 1.127+D:\David\Documents\WorkSpaces\Curso16-17\Curso17\RI\.metadat
 821700916.index
 2760669573.index
 2280038835.index
+3690811834.index
 1854211206.index
 422747590.index
+17422348.index
 1333751604.index
 3303263523.index
+2377163592.index
 2128082208.index
 1828754734.index

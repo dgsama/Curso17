@@ -9,3 +9,12 @@
 1481563765786	Rename method 'save'
 1481569913798	Delete element
 1481569918822	Delete element
+1481571574633	Rename type 'LIstarPedidos'
+1481571578999	Rename type 'LstarPedidos'
+1481571712097	Rename type 'AddRepuestos'
+1481571817026	Move compilation units
+1481576586026	Move compilation unit
+1481578137094	Delete element
+1481579347738	Rename type 'ListRepuestos'
+1481579654988	Delete element
+1481580908718	Rename type 'ListarPedidos'

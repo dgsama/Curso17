@@ -12,16 +12,17 @@ public class ListMechanicsAction implements Action {
 
 	@Override
 	public void execute() throws BusinessException {
-		Console.println("\nListado de mecánicos\n");
+		Console.println("\nListado de repuestos\n");
 
-		List<Map<String, Object>> info = ServicesFactory.getAdminService().findAllMechanics();
+		List<Map<String, Object>> info = ServicesFactory.getAdminService().listaRepuestos();
 		mostrarInfo(info);
 
 	}
 
 	private void mostrarInfo(List<Map<String, Object>> info) {
 		for (Map<String, Object> m : info) {
-			Console.printf("ID: %s Nombre: %s Apellidos: %s\n", m.get("id"), m.get("nombre"), m.get("apellidos"));
+			Console.printf(m.get("id") + " " + m.get("codigo") + " " + m.get("descripcion") + " " + m.get("existencias")
+					+ " " + m.get("min") + " " + m.get("max"));
 		}
 	}
 }

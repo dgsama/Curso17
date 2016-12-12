@@ -1,0 +1,5 @@
+package uo.ri.ui.admin.action;
+
+public class AddRepuestoAction {
+
+}
